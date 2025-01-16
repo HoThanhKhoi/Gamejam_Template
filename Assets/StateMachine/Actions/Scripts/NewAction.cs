@@ -2,8 +2,8 @@
 
 namespace StateMachine
 {
-    [CreateAssetMenu(menuName = "Scriptable State Machine/Actions/SuperAction", fileName = "SuperAction")]
-    public class SuperAction : ScriptableAction
+    [CreateAssetMenu(menuName = "Scriptable State Machine/Actions/NewAction", fileName = "NewAction")]
+    public class NewAction : ScriptableAction
     {
         public override void Act(StateComponent statesComponent)
         {

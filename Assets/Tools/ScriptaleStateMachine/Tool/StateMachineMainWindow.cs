@@ -43,11 +43,6 @@ namespace StateMachine.EditorTools
             {
                 ActionManagementWindow.ShowWindow();
             }
-
-            if (GUILayout.Button("Transitions"))
-            {
-                TransitionManagementWindow.ShowWindow();
-            }
         }
     }
 }
