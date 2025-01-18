@@ -1,7 +1,7 @@
 using Utils;
 using UnityEngine;
 
-public class PlatformerJumpComponent : MonoBehaviour, IJumpable
+public class JumpComponent : MonoBehaviour, IJumpable
 {
     [SerializeField] private float jumpForce = 10f;
     private Rigidbody2D rb;
@@ -15,4 +15,6 @@ public class PlatformerJumpComponent : MonoBehaviour, IJumpable
     {
         rb.AddForce(jumpForce * Vector2.up, ForceMode2D.Impulse);
     }
+
+    public bool IsFalling() => rb.linearVelocity.y < 0f;
 }

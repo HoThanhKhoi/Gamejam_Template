@@ -82,5 +82,10 @@ namespace StateMachine
         {
             return ComponentCache.GetComponentInParent<T>(gameObject);
         }
+
+        public T GetCachedInterface<T>() where T : class
+        {
+            return ComponentCache.GetInterface<T>(gameObject);
+        }
     }
 }

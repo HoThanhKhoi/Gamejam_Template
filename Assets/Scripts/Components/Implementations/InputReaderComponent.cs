@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class InputReaderComponent : MonoBehaviour
 {
     [field: SerializeField] public InputReader InputReader { get; private set; }
 }

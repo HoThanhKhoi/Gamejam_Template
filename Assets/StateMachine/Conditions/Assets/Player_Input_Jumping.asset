@@ -9,12 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 499f9dc307232184ca30934e3fc72ee2, type: 3}
-  m_Name: PlayerMoveState
+  m_Script: {fileID: 11500000, guid: 3a292036b6526a5449bf9abb6e3e8701, type: 3}
+  m_Name: Player_Input_Jumping
   m_EditorClassIdentifier: 
-  _animationName: player_gun_walk
-  _entryActions: []
-  _exitActions: []
-  _physicsActions:
-  - {fileID: 11400000, guid: e4de475bc3115d246ba7099f3286f53a, type: 2}
-  _stateActions: []
