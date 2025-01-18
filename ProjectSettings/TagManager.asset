@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 3
   tags:
   - Boss
+  - Obstacle
+  - FX
+  - BossTrigger
+  - EnemyAttack
+  - Terrain
+  - SlowZone
+  - Grass
   layers:
   - Default
   - TransparentFX
@@ -13,6 +20,7 @@ TagManager:
   - Water
   - UI
   - Ground
+  - Enemy
   - MapInvisBubble
   - Player
   - 

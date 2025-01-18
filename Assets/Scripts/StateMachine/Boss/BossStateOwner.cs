@@ -9,7 +9,7 @@ using static UnityEngine.UI.Image;
 public class BossStateOwner : StateOwner
 {
     [Header("Preference")]
-    [SerializeField] protected Player player;
+    [SerializeField] protected Transform player;
     [SerializeField] protected Rigidbody2D rb;
 
     public Rigidbody2D Rb { get { return rb; } }
