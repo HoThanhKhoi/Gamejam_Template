@@ -17,9 +17,9 @@ GameObject:
   - component: {fileID: 6049130263030480880}
   - component: {fileID: 4409109004953625288}
   - component: {fileID: 6130646559714626429}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player Topdown
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3016289125809821580}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.8505739, y: -5.1904078, z: -0.112038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e7c87c3f3710443b9760336454ff68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rb: {fileID: 0}
+  Rb: {fileID: 8286461148429610406}
 --- !u!114 &6049130263030480880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 4606827107604136315}
   - component: {fileID: 2983457577709051034}
   - component: {fileID: 7748984152256336212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 2288872262997382127}
   - component: {fileID: 2156486418385374794}
   - component: {fileID: 750913754082188338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
