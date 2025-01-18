@@ -381,12 +381,12 @@ MonoBehaviour:
   detectionDistance: 20
   detectionLayer:
     serializedVersion: 2
-    m_Bits: 321
+    m_Bits: 65
   groundDetectionRadius: 10
   groundDetectionDistance: 0
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   flySpeed: 0.2
   idleTime: 3
   restTime: 7
@@ -399,7 +399,7 @@ MonoBehaviour:
   projectileInitialDelay: 0
   maxProjectileCount: 5
   zipIndicator: {fileID: 4778649698233526442}
-  zipShootSpeed: 60
+  zipShootSpeed: 45
   zipShootCooldown: 5
   maxZipShootCount: 1
   laserPrefab: {fileID: 7850615434824812502}
@@ -409,10 +409,10 @@ MonoBehaviour:
   laserImpact: {fileID: 5760102632597809165, guid: d497e62fc84c9db4684013e26ee18257, type: 3}
   laserCollisionLayer:
     serializedVersion: 2
-    m_Bits: 887
+    m_Bits: 631
   laserImpactLayer:
     serializedVersion: 2
-    m_Bits: 887
+    m_Bits: 631
   maxLazerCastCount: 1
   maxLazerLength: 50000
   laserShootTime: 3
@@ -631,9 +631,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingLayerID: 1740828593
+  m_SortingLayer: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: -841880166, guid: 71d0bab6d4e2ba84a9e7d28308a29bd8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

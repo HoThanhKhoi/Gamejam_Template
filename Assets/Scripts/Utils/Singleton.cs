@@ -13,6 +13,11 @@ namespace Utils
 
         [SerializeField] private List<string> deactivationScenes = new List<string>(); // Scenes to deactivate in
 
+        private void Awake()
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
+
         /// <summary>
         /// The Singleton instance.
         /// </summary>

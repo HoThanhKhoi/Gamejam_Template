@@ -55,6 +55,11 @@ public class GolemArmProjectile : MonoBehaviour
 
     private void FollowPlayer()
     {
+        if(player == null)
+        {
+            return;
+        }
+
         Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();
 
