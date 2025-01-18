@@ -5,6 +5,7 @@ namespace StateMachine
     [CreateAssetMenu(menuName = "Scriptable State Machine/State", fileName = "State")]
     public class ScriptableState : ScriptableObject
     {
+        [SerializeField] string _animationName; 
         [SerializeField] ScriptableAction[] _entryActions;
         [SerializeField] ScriptableAction[] _exitActions;
         [SerializeField] ScriptableAction[] _physicsActions; //to be run in fixed update
@@ -12,6 +13,10 @@ namespace StateMachine
 
         public void Begin(StateComponent stateComponent)
         {
+            if (!string.IsNullOrEmpty(_animationName) && stateComponent.Animator != null)
+            {
+                stateComponent.Animator.Play(_animationName);
+            }
             foreach (var action in _entryActions)
             {
                 if (action)
