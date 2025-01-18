@@ -6,9 +6,9 @@ using UnityEngine;
 public class Stat
 {
     [SerializeField] private int baseValue;
-    public List<int> modifiers;
+    public List<int> modifiers = new List<int>();
 
-    public event Action<int> OnValueChanged;
+    public event Action<int, int> OnValueChanged;
 
     public int GetValue()
     {
@@ -24,13 +24,13 @@ public class Stat
 
     public void AddModifier(int modifier)
     {
-        OnValueChanged?.Invoke(modifier);
         modifiers.Add(modifier);
+        OnValueChanged?.Invoke(GetValue(), baseValue);
     }
 
     public void RemoveModifier(int modifier)
     {
-        OnValueChanged?.Invoke(modifier);
         modifiers.Remove(modifier);
+        OnValueChanged?.Invoke(GetValue(), baseValue);
     }
 }

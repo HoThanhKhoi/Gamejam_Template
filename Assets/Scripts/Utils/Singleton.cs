@@ -1,59 +1,96 @@
 ﻿using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Utils
 {
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
-        public bool AutoUnparentOnAwake = true;
-        protected static T instance;
+        private static T _instance;
+        private static readonly object _lock = new object();
+        private static bool _applicationIsQuitting = false;
 
-        public static bool HasInstance => instance != null;
-        public static T TryGetInstance => HasInstance ? instance : null;
+        [SerializeField] private List<string> deactivationScenes = new List<string>(); // Scenes to deactivate in
 
+        /// <summary>
+        /// The Singleton instance.
+        /// </summary>
         public static T Instance
         {
             get
             {
-                if(instance == null)
+                if (_applicationIsQuitting)
                 {
-                    instance = FindAnyObjectByType<T>();
-                    if(instance == null)
-                    {
-                        var go = new GameObject(typeof(T).Name + "Auto-generated");
-                        instance = go.AddComponent<T>();
-                    }
+                    Debug.LogWarning($"[Singleton] Instance of {typeof(T)} already destroyed. Returning null.");
+                    return null;
                 }
 
-                return instance;
+                lock (_lock)
+                {
+                    if (_instance == null)
+                    {
+                        _instance = FindObjectOfType<T>();
+
+                        if (_instance == null)
+                        {
+                            GameObject singletonObject = new GameObject($"{typeof(T)} (Singleton)");
+                            _instance = singletonObject.AddComponent<T>();
+                            DontDestroyOnLoad(singletonObject);
+                        }
+                    }
+
+                    return _instance;
+                }
             }
         }
 
-        protected virtual void Awake()
+        /// <summary>
+        /// Unity callback when the application quits.
+        /// </summary>
+        private void OnApplicationQuit()
         {
-            InitializeSingleton();
+            _applicationIsQuitting = true;
         }
 
-        protected virtual void InitializeSingleton()
+        /// <summary>
+        /// Unity callback when the singleton is destroyed.
+        /// </summary>
+        private void OnDestroy()
         {
-            if(!Application.isPlaying)
-            {
-                return;
-            }
+            _applicationIsQuitting = true;
+        }
 
-            if(AutoUnparentOnAwake)
-            {
-                transform.SetParent(null);
-            }
+        /// <summary>
+        /// Unity callback when the script is enabled.
+        /// </summary>
+        protected virtual void OnEnable()
+        {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
 
-            if(instance == null)
+        /// <summary>
+        /// Unity callback when the script is disabled.
+        /// </summary>
+        protected virtual void OnDisable()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
+        /// <summary>
+        /// Handles scene changes to deactivate the singleton GameObject if needed.
+        /// </summary>
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            if (deactivationScenes.Contains(scene.name))
             {
-                instance = this as T;
-                DontDestroyOnLoad(gameObject);
+                gameObject.SetActive(false);
+                Debug.Log($"[Singleton] {typeof(T)} deactivated in scene {scene.name}");
             }
             else
             {
-                Destroy(gameObject);
+                gameObject.SetActive(true);
+                Debug.Log($"[Singleton] {typeof(T)} activated in scene {scene.name}");
             }
         }
     }

@@ -36,7 +36,7 @@ public class BossStoneGolemState_Rest : State<BossStoneGolem, BossStoneGolemStat
     {
         base.OnCollisionEnter2D(other);
 
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("PlayerProjectile"))
         {
             stateMachine.ChangeState(BossStoneGolemStateMachine.State.Hurt);
         }

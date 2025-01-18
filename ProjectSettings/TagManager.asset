@@ -12,6 +12,7 @@ TagManager:
   - Terrain
   - SlowZone
   - Grass
+  - PlayerAttack
   layers:
   - Default
   - TransparentFX

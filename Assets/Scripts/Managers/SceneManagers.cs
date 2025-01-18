@@ -24,7 +24,7 @@ public class SceneManagers : MonoBehaviour
 		{
 			if (instance == null)
 			{
-				instance = FindObjectOfType<SceneManagers>();
+				instance = FindFirstObjectByType<SceneManagers>();
 				if (instance == null)
 				{
 					Debug.LogError("SceneManagers instance not found!");
