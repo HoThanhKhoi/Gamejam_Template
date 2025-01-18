@@ -2,96 +2,162 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 using System.Collections;
-using Utils;
+using UnityEngine.UI;
 
-public class SceneManagers : Singleton<SceneManagers>
+public class SceneManagers : MonoBehaviour
 {
 	[Header("Video & Canvas Settings")]
-	public VideoPlayer videoPlayer;      // Assign the VideoPlayer here
-	public CanvasGroup canvasGroup;      // Assign a CanvasGroup for fade effects
-	public float fadeDuration = 1f;      // Time (seconds) to fade in/out the video overlay
+	public GameObject rawImageObject;
+	public RawImage rawImage;
+	public VideoPlayer videoPlayer;
+	public CanvasGroup canvasGroup;
+	public Texture defaultTexture;
+	public float fadeDuration = 1f;
 
-	private bool videoFinished = false;
+	private static SceneManagers instance;
+	private RenderTexture renderTexture;
+	private AsyncOperation asyncOperation;
+
+	public static SceneManagers Instance
+	{
+		get
+		{
+			if (instance == null)
+			{
+				instance = FindObjectOfType<SceneManagers>();
+				if (instance == null)
+				{
+					Debug.LogError("SceneManagers instance not found!");
+				}
+			}
+			return instance;
+		}
+	}
 
 	void Awake()
 	{
-		// Make this manager persist between scenes
-		DontDestroyOnLoad(gameObject);
-
-		// Attach an event to detect when the video finishes playing
-		videoPlayer.loopPointReached += OnVideoFinished;
+		if (instance == null)
+		{
+			instance = this;
+			DontDestroyOnLoad(gameObject);
+			SetupVideoPlayer();
+		}
+		else
+		{
+			Destroy(gameObject);
+		}
 	}
 
-	/// <summary>
-	/// Start the video transition, freeze the scene, and load the next scene.
-	/// </summary>
-	/// <param name="sceneIndex">Index of the scene to load.</param>
+	private void SetupVideoPlayer()
+	{
+		Time.timeScale = 1f;
+		videoPlayer.playOnAwake = false;
+
+		// Create a new RenderTexture for video playback
+		renderTexture = new RenderTexture(1920, 1080, 0); // Adjust resolution as needed
+		videoPlayer.targetTexture = renderTexture;
+		rawImage.texture = renderTexture;
+
+		videoPlayer.loopPointReached += OnVideoComplete;
+
+		rawImageObject.SetActive(false);
+		canvasGroup.alpha = 0f;
+	}
+
 	public void PlayVideoThenLoadScene(int sceneIndex)
 	{
 		StartCoroutine(TransitionSequence(sceneIndex));
 	}
 
-	/// <summary>
-	/// Transition sequence to fade in, play the video, and load the new scene.
-	/// Freezes everything in the current scene while the video plays.
-	/// </summary>
 	private IEnumerator TransitionSequence(int sceneIndex)
 	{
-		// Freeze the scene
+		rawImageObject.SetActive(true);
 		Time.timeScale = 0f;
 
-		// Reset video and ensure it starts at the beginning
-		videoPlayer.Stop();
-		videoPlayer.time = 0;
-		videoFinished = false; // Reset the flag
-		videoPlayer.Play();
-
-		// Fade in the video canvas (from alpha 0 to 1)
-		yield return StartCoroutine(FadeCanvas(0f, 1f, fadeDuration));
-
-		// Wait for the video to finish playing
-		while (!videoFinished)
+		// Ensure a valid RenderTexture is assigned
+		if (renderTexture == null || !renderTexture.IsCreated())
 		{
-			yield return null; // Wait until OnVideoFinished is triggered
+			renderTexture = new RenderTexture(1920, 1080, 0);
+			videoPlayer.targetTexture = renderTexture;
+			rawImage.texture = renderTexture;
 		}
 
-		// Load the next scene while the video canvas is still fully visible (alpha=1)
-		SceneManager.LoadScene(sceneIndex);
+		// Start loading the next scene asynchronously
+		asyncOperation = SceneManager.LoadSceneAsync(sceneIndex);
+		asyncOperation.allowSceneActivation = false;
 
-		// Fade out the video canvas (from alpha 1 to 0) after the scene loads
-		yield return StartCoroutine(FadeCanvas(1f, 0f, fadeDuration));
-
-		// Stop the video and reset it for future transitions
+		// Play the video
 		videoPlayer.Stop();
 		videoPlayer.time = 0;
+		videoPlayer.Play();
 
-		// Unfreeze the scene
+		// Fade in while the video plays
+		yield return StartCoroutine(FadeCanvas(0f, 1f, fadeDuration));
+
+		// Wait for 5 seconds (or until the video finishes)
+		yield return new WaitForSecondsRealtime(5f);
+
+		// Ensure the scene is ready before activating
+		while (asyncOperation.progress < 1f)
+		{
+			yield return null;
+		}
+
+		// Fade out and activate the scene
+		yield return StartCoroutine(FadeCanvas(1f, 0f, fadeDuration));
+
+		rawImageObject.SetActive(false);
 		Time.timeScale = 1f;
+		asyncOperation.allowSceneActivation = true;
 	}
 
-	/// <summary>
-	/// Called when the video ends (triggered by loopPointReached event).
-	/// </summary>
-	private void OnVideoFinished(VideoPlayer vp)
+	private void OnVideoComplete(VideoPlayer vp)
 	{
-		videoFinished = true; // Mark the video as finished
+		if (asyncOperation != null && asyncOperation.progress >= 0.9f)
+		{
+			asyncOperation.allowSceneActivation = true;
+		}
 	}
 
-	/// <summary>
-	/// Fades the canvas group over time.
-	/// </summary>
 	private IEnumerator FadeCanvas(float startAlpha, float endAlpha, float duration)
 	{
 		float elapsed = 0f;
-
 		while (elapsed < duration)
 		{
-			elapsed += Time.unscaledDeltaTime; // Use unscaled time to avoid being paused
+			elapsed += Time.unscaledDeltaTime;
 			float t = Mathf.Clamp01(elapsed / duration);
 			canvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, t);
 			yield return null;
 		}
+		canvasGroup.alpha = endAlpha;
+	}
 
-		canvasGroup.alpha = endAlpha; // Ensure final alpha is exact
+	private void OnDestroy()
+	{
+		if (videoPlayer != null)
+		{
+			videoPlayer.loopPointReached -= OnVideoComplete;
+			CleanupVideoResources();
+		}
+	}
+
+	private void CleanupVideoResources()
+	{
+		videoPlayer.Stop();
+		videoPlayer.time = 0;
+
+		if (renderTexture != null)
+		{
+			renderTexture.Release();
+			renderTexture = new RenderTexture(1920, 1080, 0); // Recreate the RenderTexture
+			videoPlayer.targetTexture = renderTexture;
+			rawImage.texture = renderTexture;
+		}
+		else
+		{
+			rawImage.texture = defaultTexture;
+		}
+
+		rawImage.SetAllDirty();
 	}
 }

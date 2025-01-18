@@ -3,10 +3,11 @@ using UnityEngine;
 public class TouchBubbleChangeScene : MonoBehaviour
 {
 	[SerializeField] private int FirstLevelScene = 2;
-	[SerializeField] private int LastLevelScene = 3;
+	[SerializeField] private int LastLevelScene = 4;
 
 	// We'll reference the manager in the Inspector or via FindObjectOfType
 	[SerializeField] private SceneManagers sceneManager;
+
 
 	private bool isChangingScene = false;
 
@@ -14,6 +15,7 @@ public class TouchBubbleChangeScene : MonoBehaviour
 	{
 		if (!sceneManager)
 			sceneManager = FindFirstObjectByType<SceneManagers>();
+
 	}
 
 
@@ -29,7 +31,7 @@ public class TouchBubbleChangeScene : MonoBehaviour
 	private void LoadSceneWithVideo()
 	{
 		// pick random scene
-		int nextScene = Random.Range(FirstLevelScene, LastLevelScene);
+		int nextScene = Random.Range(FirstLevelScene, LastLevelScene + 1);
 
 		// Instead of SceneManager.LoadScene, we call:
 		sceneManager.PlayVideoThenLoadScene(nextScene);
