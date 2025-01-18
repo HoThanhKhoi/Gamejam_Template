@@ -347,6 +347,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3591271937192743120, guid: 21e44196feb071744b9cd13394b731c5, type: 3}
+      propertyPath: hideInScenes.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3591271937192743120, guid: 21e44196feb071744b9cd13394b731c5, type: 3}
       propertyPath: deactivationScenes.Array.size
       value: 0
       objectReference: {fileID: 0}

@@ -222,12 +222,12 @@ GameObject:
   - component: {fileID: 1145868205179605066}
   - component: {fileID: 969286899018233746}
   - component: {fileID: 6150712228632203889}
-  - component: {fileID: 6497555075924450283}
   - component: {fileID: 689351067072942077}
   - component: {fileID: 2583461419775002602}
   - component: {fileID: 4144624391477271942}
   - component: {fileID: 3793219279551355775}
   - component: {fileID: 3509755376786980135}
+  - component: {fileID: -3759700520397147066}
   m_Layer: 9
   m_Name: Player Platformer
   m_TagString: Player
@@ -289,7 +289,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dd9e7542d421c714aaccb440e4a494cb, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -355,22 +355,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <InputReader>k__BackingField: {fileID: 11400000, guid: 04b651d7b8072cd4a9ace024a3f04953, type: 2}
---- !u!114 &6497555075924450283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8274870398955240907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8125ec8b5acb00c419018a331ca4c2dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundCheckDistance: 1.5
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!114 &689351067072942077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e7c87c3f3710443b9760336454ff68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rb: {fileID: 0}
+  Rb: {fileID: 2975714781704965460}
 --- !u!114 &2583461419775002602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,7 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eded7c9ab4fb67e4599249c7cc159911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 10
 --- !u!114 &4144624391477271942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,6 +420,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyDamage: 30
   EnemyProjectileDamage: 10
+--- !u!114 &-3759700520397147066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8274870398955240907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157efd51c98a3f6458a92fa4fde35c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circleCastRadius: 0.4
+  circleCastDistance: 1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &8936642772595701611
 GameObject:
   m_ObjectHideFlags: 0
