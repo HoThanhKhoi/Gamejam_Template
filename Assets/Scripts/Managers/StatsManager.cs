@@ -45,4 +45,24 @@ public class StatsManager : Singleton<StatsManager>
             OnPlayerDead?.Invoke();
         }
     }
+
+    public int GetPlayerCurrentHealth()
+    {
+        return playerCurrentHealth;
+    }
+
+    public int GetPlayerMaxHealth()
+    {
+        return PlayerMaxHealth;
+    }
+
+    public int GetEnemyCurrentHealth()
+    {
+        return enemyCurrentHealth;
+    }
+
+    public int GetEnemyMaxHealth()
+    {
+        return EnemyMaxHealth;
+    }
 }
