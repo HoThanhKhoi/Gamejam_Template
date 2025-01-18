@@ -1,13 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TouchBubbleChangeScene : MonoBehaviour
 {
 	[SerializeField] private int FirstLevelScene = 2;
 	[SerializeField] private int LastLevelScene = 4;
 
-	// We'll reference the manager in the Inspector or via FindObjectOfType
+	// We'll reference the manager in the Inspector or via FindObjectByType
 	[SerializeField] private SceneManagers sceneManager;
-
 
 	private bool isChangingScene = false;
 
@@ -15,9 +15,7 @@ public class TouchBubbleChangeScene : MonoBehaviour
 	{
 		if (!sceneManager)
 			sceneManager = FindFirstObjectByType<SceneManagers>();
-
 	}
-
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
@@ -30,10 +28,17 @@ public class TouchBubbleChangeScene : MonoBehaviour
 
 	private void LoadSceneWithVideo()
 	{
-		// pick random scene
-		int nextScene = Random.Range(FirstLevelScene, LastLevelScene + 1);
+		int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+		int nextScene;
 
-		Debug.Log(nextScene);
+		// Keep picking a random scene until it's not the current scene
+		do
+		{
+			nextScene = Random.Range(FirstLevelScene, LastLevelScene +2);
+		}
+		while (nextScene == currentSceneIndex);
+
+		Debug.Log("Next Scene: " + nextScene);
 
 		// Instead of SceneManager.LoadScene, we call:
 		sceneManager.PlayVideoThenLoadScene(nextScene);

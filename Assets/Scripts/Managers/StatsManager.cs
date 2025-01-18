@@ -16,7 +16,12 @@ public class StatsManager : Singleton<StatsManager>
     public event Action OnEnemyDead;
     public event Action OnPlayerDead;
 
-    private void Start()
+	private void OnEnable()
+	{
+		OnPlayerDead += GameOver;
+	}
+
+	private void Start()
     {
         enemyCurrentHealth = EnemyMaxHealth;
         playerCurrentHealth = PlayerMaxHealth;
@@ -44,5 +49,10 @@ public class StatsManager : Singleton<StatsManager>
         {
             OnPlayerDead?.Invoke();
         }
+    }
+
+    public void GameOver()
+    {
+        SceneManagers.Instance.LoadScene(5);
     }
 }

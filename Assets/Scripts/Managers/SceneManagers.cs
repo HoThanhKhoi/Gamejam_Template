@@ -116,6 +116,11 @@ public class SceneManagers : MonoBehaviour
 		asyncOperation.allowSceneActivation = true;
 	}
 
+	public void LoadScene(int sceneIndex)
+	{
+		SceneManager.LoadScene(sceneIndex);
+	}
+
 	private void OnVideoComplete(VideoPlayer vp)
 	{
 		if (asyncOperation != null && asyncOperation.progress >= 0.9f)
