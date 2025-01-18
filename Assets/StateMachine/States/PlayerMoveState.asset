@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499f9dc307232184ca30934e3fc72ee2, type: 3}
   m_Name: PlayerMoveState
   m_EditorClassIdentifier: 
-  _animationName: player_run_side
+  _animationName: player_gun_walk
   _entryActions: []
   _exitActions: []
   _physicsActions:
