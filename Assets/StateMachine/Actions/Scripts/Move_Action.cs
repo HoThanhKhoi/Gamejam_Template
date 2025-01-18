@@ -5,21 +5,11 @@ namespace StateMachine
     [CreateAssetMenu(menuName = "Scriptable State Machine/Actions/Platformer_Move_Horizontal", fileName = "Platformer_Move_Horizontal")]
     public class Move_Action : ScriptableAction
     {
-        private IMoveable moveable;
-        private IFacing horizontalFacing;
         public override void Act(StateComponent statesComponent)
         {
-            if(moveable == null)
-            {
-                moveable = statesComponent.GetComponent<IMoveable>();
-            }
+            PlayerController playerController = statesComponent.GetCachedComponent<PlayerController>();
             
-            if(horizontalFacing == null)
-            {
-                horizontalFacing = statesComponent.GetComponent<IFacing>();
-            } 
-            
-            moveable.Move();
+            playerController.MoveComponent.Move();
             horizontalFacing.HandleFacing();
         }
     }
