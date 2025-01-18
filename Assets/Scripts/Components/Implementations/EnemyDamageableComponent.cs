@@ -10,7 +10,7 @@ public class EnemyDamageableComponent : MonoBehaviour, IDamageable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("PlayerProjectile"))
+        if (collision.CompareTag("PlayerAttack"))
         {
             TakeDamage(PlayerDamage);
         }
@@ -18,7 +18,7 @@ public class EnemyDamageableComponent : MonoBehaviour, IDamageable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.collider.CompareTag("PlayerAttack"))
         {
             TakeDamage(PlayerDamage);
         }

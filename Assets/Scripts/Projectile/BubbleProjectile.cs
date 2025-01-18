@@ -46,10 +46,17 @@ public class BubbleProjectile : MonoBehaviour
         transform.position += new Vector3(0, floatOffset * Time.deltaTime, 0);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         // Handle collision logic (e.g., deal damage, pop the bubble, etc.)
-        Debug.Log($"Bubble hit {other.gameObject.name}");
+        Debug.Log($"Bubble hit {collision.gameObject.name}");
+        gameObject.SetActive(false); // Return to the object pool
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Handle collision logic (e.g., deal damage, pop the bubble, etc.)
+        Debug.Log($"Bubble hit {collision.gameObject.name}");
         gameObject.SetActive(false); // Return to the object pool
     }
 }

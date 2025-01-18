@@ -7,8 +7,8 @@ public class StatsManager : Singleton<StatsManager>
     public int EnemyMaxHealth; // Initial value
     public int PlayerMaxHealth; // Initial value
 
-    private int enemyCurrentHealth;
-    private int playerCurrentHealth;
+    public int enemyCurrentHealth;
+    public int playerCurrentHealth;
 
     public event Action<int, int> OnEnemyHealthChanged;
     public event Action<int, int> OnPlayerHealthChanged;
