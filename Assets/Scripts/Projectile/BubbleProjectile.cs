@@ -3,8 +3,8 @@ using UnityEngine;
 public class BubbleProjectile : MonoBehaviour
 {
     [SerializeField] private float initialSpeed = 10f; // Initial movement speed
-    [SerializeField] private float minSpeed = 0.5f; // Minimum speed
-    [SerializeField] private float decelerationRate = 3f; // Rate at which speed decreases
+    [SerializeField] private float minSpeed = 1f; // Minimum speed
+    [SerializeField] private float decelerationRate = 7f; // Rate at which speed decreases
     [SerializeField] private float lifespan = 5f; // Time before the bubble disappears
     [SerializeField] private float floatIntensity = 0.5f; // Intensity of floating effect
     [SerializeField] private float floatFrequency = 2f; // Frequency of floating effect
