@@ -6,8 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/MainMenu.unity
+    guid: 7653a9af01fcc6848aed8e26650320bf
+  - enabled: 1
+    path: Assets/Scenes/BubbleStartScene.unity
+    guid: 897f4f67ab8cea248a126151a2941513
+  - enabled: 1
+    path: Assets/Scenes/Khoi_Level1_Platformer_Brawl.unity
+    guid: 348f93497e5803d4397c55d54c68d42b
+  - enabled: 1
+    path: Assets/Scenes/Kien_Level 1_TopDown_Shooter.unity
+    guid: 2702d05510c216e4eb4d4b229b8eb11c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

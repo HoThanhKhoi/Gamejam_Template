@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -2303723472299303205}
   - component: {fileID: 5021957286045455131}
   - component: {fileID: -8680257222827917895}
+  - component: {fileID: -5189891052180192068}
   m_Layer: 3
   m_Name: Bubble1
   m_TagString: Untagged
@@ -165,5 +166,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ccfb94cbc65714dbd69668cdd5723a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desiredSpeed: 3
-  randomCenterOffset: 5
+  centerPullStrength: 0.2
+  minPushInterval: 1
+  maxPushInterval: 3
+  minPushForce: 0.1
+  maxPushForce: 0.5
+--- !u!114 &-5189891052180192068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610568848739287918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d0fd21a3722c242a42e21d7209877e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirstLevelScene: 2
+  LastLevelScene: 3
