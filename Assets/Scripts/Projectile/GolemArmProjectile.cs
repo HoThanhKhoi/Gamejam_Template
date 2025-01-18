@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GolemArmProjectile : MonoBehaviour
 {
-    private Player player;
+    private Transform player;
     private float speed;
     private float rotateSpeed;
     private bool isFlipped;
@@ -14,7 +14,7 @@ public class GolemArmProjectile : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb;
 
-    public void SetUp(Player player, float speed, float rotateSpeed, Vector2 rightTransform, bool isFlipped, float initialDelay)
+    public void SetUp(Transform player, float speed, float rotateSpeed, Vector2 rightTransform, bool isFlipped, float initialDelay)
     {
         this.player = player;
         this.speed = speed;

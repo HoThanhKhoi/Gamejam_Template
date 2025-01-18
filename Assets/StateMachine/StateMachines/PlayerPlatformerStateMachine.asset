@@ -16,13 +16,13 @@ MonoBehaviour:
   _emptyState: {fileID: 11400000, guid: 20352fc7a011e8748b8ba85265763ede, type: 2}
   _transitions:
   - originState: {fileID: 11400000, guid: 8a572ab69e1197f4a892407e7e6f5a99, type: 2}
+    condition: {fileID: 11400000, guid: 460f7548c657d174ea29dc149ea67c08, type: 2}
+    trueState: {fileID: 11400000, guid: e6ed99a6fb95b4d4b90ee8bbfc0cb4ea, type: 2}
+    falseState: {fileID: 11400000, guid: 20352fc7a011e8748b8ba85265763ede, type: 2}
+  - originState: {fileID: 11400000, guid: 8a572ab69e1197f4a892407e7e6f5a99, type: 2}
     condition: {fileID: 11400000, guid: d402de5ecc019f7438c4d53550b3d795, type: 2}
     trueState: {fileID: 11400000, guid: 919d49f4824fd2847bd2f1a8f7b86b38, type: 2}
     falseState: {fileID: 11400000, guid: 8a572ab69e1197f4a892407e7e6f5a99, type: 2}
-  - originState: {fileID: 11400000, guid: 8a572ab69e1197f4a892407e7e6f5a99, type: 2}
-    condition: {fileID: 11400000, guid: 460f7548c657d174ea29dc149ea67c08, type: 2}
-    trueState: {fileID: 11400000, guid: e6ed99a6fb95b4d4b90ee8bbfc0cb4ea, type: 2}
-    falseState: {fileID: 11400000, guid: e6ed99a6fb95b4d4b90ee8bbfc0cb4ea, type: 2}
   - originState: {fileID: 11400000, guid: 919d49f4824fd2847bd2f1a8f7b86b38, type: 2}
     condition: {fileID: 11400000, guid: d402de5ecc019f7438c4d53550b3d795, type: 2}
     trueState: {fileID: 11400000, guid: 20352fc7a011e8748b8ba85265763ede, type: 2}
