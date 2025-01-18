@@ -206,10 +206,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 6431621380860248302}
-    - target: {fileID: 8520117174634118635, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
-      propertyPath: zipShootSpeed
-      value: 45
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

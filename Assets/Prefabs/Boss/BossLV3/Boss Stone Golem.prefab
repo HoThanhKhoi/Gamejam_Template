@@ -381,12 +381,12 @@ MonoBehaviour:
   detectionDistance: 20
   detectionLayer:
     serializedVersion: 2
-    m_Bits: 321
+    m_Bits: 65
   groundDetectionRadius: 10
   groundDetectionDistance: 0
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   flySpeed: 0.2
   idleTime: 3
   restTime: 7
@@ -409,10 +409,10 @@ MonoBehaviour:
   laserImpact: {fileID: 5760102632597809165, guid: d497e62fc84c9db4684013e26ee18257, type: 3}
   laserCollisionLayer:
     serializedVersion: 2
-    m_Bits: 887
+    m_Bits: 631
   laserImpactLayer:
     serializedVersion: 2
-    m_Bits: 887
+    m_Bits: 631
   maxLazerCastCount: 1
   maxLazerLength: 50000
   laserShootTime: 3
