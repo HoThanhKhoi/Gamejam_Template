@@ -4,17 +4,31 @@ using Utils;
 
 public class StatsManager : Singleton<StatsManager>
 {
-    public Stat EnemyHealth;
-    public Stat PlayerHealth;
+    public int EnemyMaxHealth; // Initial value
+    public int PlayerMaxHealth; // Initial value
+
+    private int enemyCurrentHealth;
+    private int playerCurrentHealth;
+
+    public event Action<int, int> OnEnemyHealthChanged;
+    public event Action<int, int> OnPlayerHealthChanged;
 
     public event Action OnEnemyDead;
     public event Action OnPlayerDead;
 
+    private void Start()
+    {
+        enemyCurrentHealth = EnemyMaxHealth;
+        playerCurrentHealth = PlayerMaxHealth;
+    }
+
     public void DealDamageToEnemy(int damage)
     {
-        EnemyHealth.AddModifier(-damage);
+        enemyCurrentHealth -= damage;
 
-        if (EnemyHealth.GetValue() <= 0)
+        OnEnemyHealthChanged?.Invoke(enemyCurrentHealth, EnemyMaxHealth);
+
+        if (enemyCurrentHealth <= 0)
         {
             OnEnemyDead?.Invoke();
         }
@@ -22,9 +36,11 @@ public class StatsManager : Singleton<StatsManager>
 
     public void DealDamageToPlayer(int damage)
     {
-        PlayerHealth.AddModifier(-damage);
+        playerCurrentHealth -= damage;
 
-        if (PlayerHealth.GetValue() <= 0)
+        OnPlayerHealthChanged?.Invoke(playerCurrentHealth, PlayerMaxHealth);
+
+        if (playerCurrentHealth <= 0)
         {
             OnPlayerDead?.Invoke();
         }
