@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerTopDownAimAndShoot : MonoBehaviour
 {
     [SerializeField] private string poolName = "Projectile";
-    [SerializeField] private Transform firePoint;
+    [SerializeField] private Transform firePoint ;
     [SerializeField] private float shootCooldown = 0.5f;
     private Camera mainCamera;
     private float shootTimer;

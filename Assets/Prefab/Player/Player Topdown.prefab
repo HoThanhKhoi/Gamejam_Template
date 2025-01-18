@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolName: Projectile
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 5250775738444072041}
   shootCooldown: 0.5
 --- !u!1 &4370730412968262553
 GameObject:

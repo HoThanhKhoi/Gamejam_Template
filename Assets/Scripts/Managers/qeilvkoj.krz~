@@ -87,14 +87,8 @@ public class SceneManagers : MonoBehaviour
 			rawImage.texture = renderTexture;
 		}
 
-		// Start loading a random scene asynchronously
-		int nextSceneIndex;
-		do
-		{
-			nextSceneIndex = Random.Range(0, SceneManager.sceneCountInBuildSettings);
-		} while (nextSceneIndex == SceneManager.GetActiveScene().buildIndex); // Ensure it's not the current scene
-
-		asyncOperation = SceneManager.LoadSceneAsync(nextSceneIndex);
+		// Start loading the next scene asynchronously
+		asyncOperation = SceneManager.LoadSceneAsync(sceneIndex);
 		asyncOperation.allowSceneActivation = false;
 
 		// Play the video
@@ -121,7 +115,6 @@ public class SceneManagers : MonoBehaviour
 		Time.timeScale = 1f;
 		asyncOperation.allowSceneActivation = true;
 	}
-
 
 	private void OnVideoComplete(VideoPlayer vp)
 	{
@@ -197,23 +190,16 @@ public class SceneManagers : MonoBehaviour
 		{
 			if (component is Bloom bloom)
 			{
-				bloom.intensity.Override(Random.Range(0.1f, 5f)); // Random intensity between 0 and 5
+				bloom.intensity.Override(Random.Range(0f, 5f)); // Random intensity between 0 and 5
 			}
-			else if (component is LensDistortion lensDistortion)
+			else if (component is ColorAdjustments colorAdjustments)
 			{
-				lensDistortion.intensity.Override(Random.Range(-0.5f, 0.5f));    // Random contrast
+				colorAdjustments.saturation.Override(Random.Range(-100f, 100f)); // Random saturation
+				colorAdjustments.contrast.Override(Random.Range(-50f, 50f));     // Random contrast
 			}
 			else if (component is Vignette vignette)
 			{
-				vignette.intensity.Override(Random.Range(0f, 0.5f)); // Random vignette intensity
-			}
-			else if (component is ChromaticAberration chromaticAberration)
-			{
-				chromaticAberration.intensity.Override(Random.Range(0f, 0.7f)); // Random chromatic aberration intensity
-			}
-			else if (component is FilmGrain filmGrain)
-			{
-				filmGrain.intensity.Override(Random.Range(0f, 1f)); // Random film grain intensity
+				vignette.intensity.Override(Random.Range(0f, 1f)); // Random vignette intensity
 			}
 			// Add more post-processing components as needed
 		}
