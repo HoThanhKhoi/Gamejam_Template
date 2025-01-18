@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [field: SerializeField] public InputReader InputReader { get; private set; }
+
     public bool IsPlatformer = true;
     public IMoveable MoveComponent { get; set; }
     public IFacing FacingComponent { get; set; }
@@ -14,6 +15,10 @@ public class PlayerController : MonoBehaviour
         if(IsPlatformer)
         {
             InitiatePlatformer();
+        }
+        else
+        {
+            InitiateTopdown();
         }
     }
 
@@ -29,6 +34,10 @@ public class PlayerController : MonoBehaviour
     {
         MoveComponent = GetComponent<TopDownMoveComponent>();
         FacingComponent = GetComponent<MouseFacingComponent>();
+        if (FacingComponent == null)
+        {
+            Debug.LogError("MouseFacingComponent not found on the GameObject.");
+        }
     }
 
 }
