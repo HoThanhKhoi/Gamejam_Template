@@ -10,7 +10,7 @@ namespace StateMachine
             PlayerController playerController = statesComponent.GetCachedComponent<PlayerController>();
             
             playerController.MoveComponent.Move();
-            horizontalFacing.HandleFacing();
+            playerController.FacingComponent.HandleFacing();
         }
     }
 }

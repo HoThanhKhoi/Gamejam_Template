@@ -5,6 +5,7 @@ public class PlatformerHorizontalMoveComponent : MonoBehaviour, IMoveable
 {
     [SerializeField] private float moveSpeed = 5f;
     private IFacing facingComponent;
+    private Rigidbody2DComponent rigidbody2DComponent;
     private Rigidbody2D rb;
     private PlayerController playerController;
 
@@ -20,10 +21,5 @@ public class PlatformerHorizontalMoveComponent : MonoBehaviour, IMoveable
         Vector2 moveDirection = playerController.InputReader.MoveDirection;
         SetVelocity(moveDirection.x * moveSpeed, rb.linearVelocity.y);
         facingComponent.SetFacingValue(moveDirection.x);
-    }
-
-    private void SetVelocity(float x,float y)
-    {
-        rb.linearVelocity = new Vector2(x, y);
     }
 }

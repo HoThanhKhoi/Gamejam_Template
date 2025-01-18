@@ -15,6 +15,7 @@ public class InputReader : ScriptableObject, IPlayerActions
 
     public event Action<Vector2> OnMoveEvent;
     public event Action OnJumpEvent;
+    public bool IsJumping { get; private set; }
 
     private void OnEnable()
     {
@@ -41,7 +42,6 @@ public class InputReader : ScriptableObject, IPlayerActions
         if (context.performed)
         {
             MoveDirection = context.ReadValue<Vector2>();
-            OnMoveEvent?.Invoke(MoveDirection);
         }
 
         if (context.canceled)
@@ -64,6 +64,11 @@ public class InputReader : ScriptableObject, IPlayerActions
         if (context.performed)
         {
             OnJumpEvent?.Invoke();
+            IsJumping = true;
+        }
+        else
+        {
+            IsJumping = false;
         }
     }
 }
