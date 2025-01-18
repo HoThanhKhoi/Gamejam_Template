@@ -11,16 +11,17 @@ public class TouchBubbleChangeScene : MonoBehaviour
 
 	private bool isChangingScene = false;
 
-	void Awake()
-	{
-		if (!sceneManager)
-			sceneManager = FindFirstObjectByType<SceneManagers>();
-	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.gameObject.CompareTag("Player") && !isChangingScene)
 		{
+			sceneManager = FindFirstObjectByType<SceneManagers>();
+			if(sceneManager == null)
+			{
+				Debug.LogError("SceneManagers instance not found!");
+				return;
+			}
 			isChangingScene = true;
 			LoadSceneWithVideo();
 		}
