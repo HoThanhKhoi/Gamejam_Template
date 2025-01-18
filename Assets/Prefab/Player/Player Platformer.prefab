@@ -131,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3786286203697158879}
   - component: {fileID: 7607509785959925750}
+  - component: {fileID: 6025614116199845540}
   m_Layer: 9
   m_Name: Weapon
   m_TagString: Untagged
@@ -150,7 +151,8 @@ Transform:
   m_LocalPosition: {x: -1.04, y: -0.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 144494780541914213}
   m_Father: {fileID: 2141442003046012729}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7607509785959925750
@@ -208,6 +210,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6025614116199845540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6597192718393464659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73a6022ddfd13104b97c376f1baa809b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2141442003046012729}
+  distanceFromPlayer: 1
+--- !u!1 &7231106921342177662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 144494780541914213}
+  m_Layer: 9
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &144494780541914213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7231106921342177662}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5000001, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3786286203697158879}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8274870398955240907
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +275,7 @@ GameObject:
   - component: {fileID: 4144624391477271942}
   - component: {fileID: 3793219279551355775}
   - component: {fileID: 3509755376786980135}
+  - component: {fileID: 3400654365190263103}
   m_Layer: 9
   m_Name: Player Platformer
   m_TagString: Player
@@ -436,6 +484,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyDamage: 30
   EnemyProjectileDamage: 10
+--- !u!114 &3400654365190263103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8274870398955240907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524f0ac8c349c2441b57a60dc2d69e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolName: Projectile
+  firePoint: {fileID: 144494780541914213}
+  shootCooldown: 0.5
 --- !u!1 &8936642772595701611
 GameObject:
   m_ObjectHideFlags: 0
