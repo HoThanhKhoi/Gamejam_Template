@@ -44,8 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76227d4302833ed47b399bc4ed83ac54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AutoUnparentOnAwake: 1
+  deactivationScenes: []
   poolList:
-  - name: 
+  - name: Stone Golem Arm
     prefab: {fileID: 7825739491557981429, guid: 96f5e63030d8fa040a513ccb484f7f38, type: 3}
-    size: 0
+    size: 10
+  - name: Laser Impact
+    prefab: {fileID: 5760102632597809165, guid: d497e62fc84c9db4684013e26ee18257, type: 3}
+    size: 50
+  - name: Bubble
+    prefab: {fileID: 6192875912645749661, guid: bd0e64c84e80d494c89256f5ec0837f0, type: 3}
+    size: 50

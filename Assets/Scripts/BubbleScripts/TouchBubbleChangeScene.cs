@@ -33,6 +33,8 @@ public class TouchBubbleChangeScene : MonoBehaviour
 		// pick random scene
 		int nextScene = Random.Range(FirstLevelScene, LastLevelScene + 1);
 
+		Debug.Log(nextScene);
+
 		// Instead of SceneManager.LoadScene, we call:
 		sceneManager.PlayVideoThenLoadScene(nextScene);
 	}

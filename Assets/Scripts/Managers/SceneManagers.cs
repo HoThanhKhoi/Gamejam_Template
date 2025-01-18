@@ -26,7 +26,7 @@ public class SceneManagers : MonoBehaviour
 		{
 			if (instance == null)
 			{
-				instance = FindFirstObjectByType<SceneManagers>();
+				instance = FindAnyObjectByType<SceneManagers>();
 				if (instance == null)
 				{
 					Debug.LogError("SceneManagers instance not found!");
@@ -87,14 +87,8 @@ public class SceneManagers : MonoBehaviour
 			rawImage.texture = renderTexture;
 		}
 
-		// Start loading a random scene asynchronously
-		int nextSceneIndex;
-		do
-		{
-			nextSceneIndex = Random.Range(0, SceneManager.sceneCountInBuildSettings);
-		} while (nextSceneIndex == SceneManager.GetActiveScene().buildIndex); // Ensure it's not the current scene
-
-		asyncOperation = SceneManager.LoadSceneAsync(nextSceneIndex);
+		// Start loading the next scene asynchronously using the provided index
+		asyncOperation = SceneManager.LoadSceneAsync(sceneIndex);
 		asyncOperation.allowSceneActivation = false;
 
 		// Play the video
@@ -121,7 +115,6 @@ public class SceneManagers : MonoBehaviour
 		Time.timeScale = 1f;
 		asyncOperation.allowSceneActivation = true;
 	}
-
 
 	private void OnVideoComplete(VideoPlayer vp)
 	{
@@ -176,7 +169,7 @@ public class SceneManagers : MonoBehaviour
 	private void RandomizePostProcessing()
 	{
 		// Find the global volume in the scene
-		Volume globalVolume = FindFirstObjectByType<Volume>();
+		Volume globalVolume = FindAnyObjectByType<Volume>();
 
 		if (globalVolume == null)
 		{
@@ -215,7 +208,6 @@ public class SceneManagers : MonoBehaviour
 			{
 				filmGrain.intensity.Override(Random.Range(0f, 1f)); // Random film grain intensity
 			}
-			// Add more post-processing components as needed
 		}
 
 		Debug.Log("Post-processing effects randomized!");

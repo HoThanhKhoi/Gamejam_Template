@@ -191,18 +191,18 @@ PrefabInstance:
     - target: {fileID: 4604493099456977539, guid: 4d79e78e20e329c448edbde25755d435, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1625292457}
     - target: {fileID: 5135654462582485822, guid: 4d79e78e20e329c448edbde25755d435, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.92
+      value: -0.8505739
       objectReference: {fileID: 0}
     - target: {fileID: 5135654462582485822, guid: 4d79e78e20e329c448edbde25755d435, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.94
+      value: -5.1904078
       objectReference: {fileID: 0}
     - target: {fileID: 5135654462582485822, guid: 4d79e78e20e329c448edbde25755d435, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -10.112038
       objectReference: {fileID: 0}
     - target: {fileID: 5135654462582485822, guid: 4d79e78e20e329c448edbde25755d435, type: 3}
       propertyPath: m_LocalRotation.w
@@ -40368,7 +40368,7 @@ Transform:
   m_GameObject: {fileID: 763367842}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.92, y: -0.94, z: -10}
+  m_LocalPosition: {x: -0.8505739, y: -5.1904078, z: -10.112038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40450,55 +40450,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
---- !u!1 &1102577163
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1102577165}
-  - component: {fileID: 1102577166}
-  m_Layer: 0
-  m_Name: ObjectPoolingManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1102577165
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1102577163}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.073023, y: -3.9197857, z: 0.0908248}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1102577166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1102577163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76227d4302833ed47b399bc4ed83ac54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AutoUnparentOnAwake: 1
-  poolList:
-  - name: Bubble
-    prefab: {fileID: 6192875912645749661, guid: bd0e64c84e80d494c89256f5ec0837f0, type: 3}
-    size: 100
 --- !u!1 &1331350758
 GameObject:
   m_ObjectHideFlags: 0
@@ -40677,6 +40628,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6d39e3f2a738354fbc8b441990281a2, type: 3}
+--- !u!4 &1625292457 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5303680971084493509, guid: d6d39e3f2a738354fbc8b441990281a2, type: 3}
+  m_PrefabInstance: {fileID: 1625292456}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1808137121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40786,7 +40742,6 @@ SceneRoots:
   - {fileID: 763367845}
   - {fileID: 1331350760}
   - {fileID: 1625292456}
-  - {fileID: 1102577165}
   - {fileID: 451269074}
   - {fileID: 1808137121}
   - {fileID: 278179601}
