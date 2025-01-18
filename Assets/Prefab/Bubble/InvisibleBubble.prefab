@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -2303723472299303205}
   - component: {fileID: 5021957286045455131}
   - component: {fileID: -8324489436768453965}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: InvisibleBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
