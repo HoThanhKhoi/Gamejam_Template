@@ -158,10 +158,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 410242555585604415, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 1161601921441634047, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.3
@@ -202,45 +198,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2042015828342011843, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 5644748115133807203, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
       propertyPath: m_Name
       value: Boss Stone Golem
-      objectReference: {fileID: 0}
-    - target: {fileID: 7850615434824812502, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8520117174634118635, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 6431621380860248302}
     - target: {fileID: 8520117174634118635, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
-      propertyPath: laserPrefab
-      value: 
-      objectReference: {fileID: 1274205918}
-    - target: {fileID: 8520117174634118635, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
       propertyPath: centerTransform
       value: 
-      objectReference: {fileID: 66551636}
+      objectReference: {fileID: 6431621380860248302}
     - target: {fileID: 8520117174634118635, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8520117174634118635, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
-      propertyPath: detectionLayer.m_Bits
-      value: 321
-      objectReference: {fileID: 0}
-    - target: {fileID: 8520117174634118635, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
-      propertyPath: laserImpactLayer.m_Bits
-      value: 375
-      objectReference: {fileID: 0}
-    - target: {fileID: 8520117174634118635, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
-      propertyPath: laserCollisionLayer.m_Bits
-      value: 375
+      propertyPath: <MaxHealth>k__BackingField
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -720,11 +692,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1 &1274205918 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7850615434824812502, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
-  m_PrefabInstance: {fileID: 134911916}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2117974583922217642
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class BossStoneGolemState_Rest : State<BossStoneGolem, BossStoneGolemStat
 
         stateTimer = owner.RestTime;
         owner.ResetAttackCount();
-        owner.Rb.linearVelocity = Vector2.down * owner.RestFallSpeed;
+        owner.Rb.gravityScale = 0.5f;
     }
 
     public override void Update()
@@ -29,7 +29,7 @@ public class BossStoneGolemState_Rest : State<BossStoneGolem, BossStoneGolemStat
     {
         base.Exit();
 
-        owner.Rb.linearVelocity = Vector2.zero;
+        owner.Rb.gravityScale = 0.5f;
     }
 
     public override void OnCollisionEnter2D(Collision2D other)
