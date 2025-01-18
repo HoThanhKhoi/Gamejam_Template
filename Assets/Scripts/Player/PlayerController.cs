@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private void InitiatePlatformer()
     {
         MoveComponent = GetComponent<PlatformerHorizontalMoveComponent>();
-        FacingComponent = GetComponent<IFacing>();
+        FacingComponent = GetComponent<HorizonalFacingComponent>();
         CheckGroundedComponent = GetComponent<ICheckGrounded>();
         JumpComponent = GetComponent<IJumpable>();
     }
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     private void InitiateTopdown()
     {
         MoveComponent = GetComponent<TopDownMoveComponent>();
-        FacingComponent = GetComponent<IFacing>();
+        FacingComponent = GetComponent<MouseFacingComponent>();
     }
 
 }
