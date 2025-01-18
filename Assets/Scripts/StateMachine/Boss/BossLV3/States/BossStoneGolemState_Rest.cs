@@ -29,7 +29,7 @@ public class BossStoneGolemState_Rest : State<BossStoneGolem, BossStoneGolemStat
     {
         base.Exit();
 
-        owner.Rb.gravityScale = 0.5f;
+        owner.Rb.gravityScale = 0f;
     }
 
     public override void OnCollisionEnter2D(Collision2D other)

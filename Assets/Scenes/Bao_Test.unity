@@ -160,11 +160,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1161601921441634047, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.3
+      value: 34.9
       objectReference: {fileID: 0}
     - target: {fileID: 1161601921441634047, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.1
+      value: 18.6
       objectReference: {fileID: 0}
     - target: {fileID: 1161601921441634047, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -198,18 +198,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2042015828342011843, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
+      propertyPath: m_TagString
+      value: EnemyAttack
+      objectReference: {fileID: 0}
     - target: {fileID: 5644748115133807203, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
       propertyPath: m_Name
       value: Boss Stone Golem
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980660194319729668, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7850615434824812502, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7850615434824812502, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
+      propertyPath: m_TagString
+      value: EnemyAttack
       objectReference: {fileID: 0}
     - target: {fileID: 8520117174634118635, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 6431621380860248302}
     - target: {fileID: 8520117174634118635, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
+      propertyPath: flySpeed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8520117174634118635, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
       propertyPath: centerTransform
       value: 
       objectReference: {fileID: 6431621380860248302}
+    - target: {fileID: 8520117174634118635, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
+      propertyPath: laserImpactLayer.m_Bits
+      value: 887
+      objectReference: {fileID: 0}
+    - target: {fileID: 8520117174634118635, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
+      propertyPath: <MaxHealth>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8520117174634118635, guid: cc57cfb28341efc4abd6dfa1b2695e5e, type: 3}
+      propertyPath: laserCollisionLayer.m_Bits
+      value: 887
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -277,7 +309,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -352,6 +384,57 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &368582578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 368582579}
+  - component: {fileID: 368582580}
+  m_Layer: 0
+  m_Name: Stats Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &368582579
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368582578}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 65.86603, y: 20.064016, z: -1.7012405}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &368582580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368582578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b250615e421222408fe241e53fbc2c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AutoUnparentOnAwake: 1
+  EnemyHealth:
+    baseValue: 0
+    modifiers: 
+  PlayerHealth:
+    baseValue: 0
+    modifiers: 
 --- !u!1 &806186763
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,8 +563,8 @@ Transform:
   m_GameObject: {fileID: 806186763}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.83, y: -10.31, z: -0.10468447}
-  m_LocalScale: {x: 12.65, y: 1, z: 1}
+  m_LocalPosition: {x: -0.83, y: -14.33, z: -0.10468447}
+  m_LocalScale: {x: 39.974, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -823,3 +906,4 @@ SceneRoots:
   - {fileID: 134911916}
   - {fileID: 66551636}
   - {fileID: 1144267005}
+  - {fileID: 368582579}
