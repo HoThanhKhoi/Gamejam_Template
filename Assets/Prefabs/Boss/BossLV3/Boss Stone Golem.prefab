@@ -352,7 +352,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.3, y: 4.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8323306511767664748}
@@ -393,13 +393,13 @@ MonoBehaviour:
   restFallSpeed: 5
   armProjectilePrefab: {fileID: 7825739491557981429, guid: 96f5e63030d8fa040a513ccb484f7f38, type: 3}
   armProjectileSpawnPoint: {fileID: 7265183201682918075}
-  armProjectileSpeed: 40
-  armProjectileRotateSpeed: 150
+  armProjectileSpeed: 20
+  armProjectileRotateSpeed: 170
   projectileCooldown: 1
   projectileInitialDelay: 0
   maxProjectileCount: 5
   zipIndicator: {fileID: 4778649698233526442}
-  zipShootSpeed: 100
+  zipShootSpeed: 60
   zipShootCooldown: 5
   maxZipShootCount: 1
   laserPrefab: {fileID: 7850615434824812502}
@@ -414,7 +414,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 375
   maxLazerCastCount: 1
-  maxLazerLength: 500
+  maxLazerLength: 50000
   laserShootTime: 3
   laserRotationSpeed: 1
 --- !u!114 &2309013408810368742
