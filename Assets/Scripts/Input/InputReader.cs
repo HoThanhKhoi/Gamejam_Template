@@ -10,6 +10,9 @@ public class InputReader : ScriptableObject, IPlayerActions
     private InputSystem_Actions _action;
 
     public Vector2 MoveDirection { get; private set; }
+
+    public bool IsMoving => MoveDirection != Vector2.zero;
+
     public event Action<Vector2> OnMoveEvent;
     public event Action OnJumpEvent;
 
