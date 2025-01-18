@@ -854,8 +854,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ef488c7336a2d24080e962986b486e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstLevelScene: 2
-  LastLevelScene: 4
 --- !u!1 &1696392299
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,7 +898,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1696392299}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 213283f2682d1364aa80cbf422e769a2, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 584f50dfc8b32234ca741786842ecde8, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -961,8 +959,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 578.0863, y: -3.2935}
-  m_SizeDelta: {x: 707.5522, y: 708.311}
+  m_AnchoredPosition: {x: 583.4158, y: 3.265}
+  m_SizeDelta: {x: 696.8931, y: 695.1939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2106383146
 MonoBehaviour:

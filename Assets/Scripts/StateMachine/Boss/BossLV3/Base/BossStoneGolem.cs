@@ -73,6 +73,8 @@ public class BossStoneGolem : BossStateOwner
 
         laserBeamSpriteRenderer = laserBeam.GetComponent<SpriteRenderer>();
 
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+
         centerTransform = player.transform;
     }
 
