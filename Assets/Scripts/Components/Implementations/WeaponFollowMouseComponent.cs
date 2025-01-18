@@ -39,7 +39,7 @@ public class WeaponFollowMouseComponent : MonoBehaviour
         // Adjust rotation based on player's facing direction
         if (player.localScale.x < 0) // Player is flipped (facing left)
         {
-            transform.rotation = Quaternion.Euler(0, 180, angle); // Flip weapon on Y-axis
+            transform.rotation = Quaternion.Euler(180, 0, -angle); // Flip weapon on Y-axis
         }
         else // Player is facing right
         {
