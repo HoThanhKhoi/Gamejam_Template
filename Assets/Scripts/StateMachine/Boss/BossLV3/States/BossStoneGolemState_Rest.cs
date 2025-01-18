@@ -36,8 +36,13 @@ public class BossStoneGolemState_Rest : State<BossStoneGolem, BossStoneGolemStat
     {
         base.OnCollisionEnter2D(other);
 
-        if(other.gameObject.CompareTag("PlayerProjectile"))
+        if (other.collider.CompareTag("PlayerAttack"))
         {
+            EnemyDamageableComponent damageable = owner.GetComponent<EnemyDamageableComponent>();
+
+            damageable.TakeDamage(damageable.PlayerDamage);
+            damageable.TakeDamage(damageable.PlayerDamage);
+
             stateMachine.ChangeState(BossStoneGolemStateMachine.State.Hurt);
         }
     }

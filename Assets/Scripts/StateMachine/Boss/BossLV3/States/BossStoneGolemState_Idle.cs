@@ -36,4 +36,16 @@ public class BossStoneGolemState_Idle : State<BossStoneGolem, BossStoneGolemStat
             }
         }
     }
+
+    public override void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("PlayerAttack"))
+        {
+            EnemyDamageableComponent damageable = owner.GetComponent<EnemyDamageableComponent>();
+
+            damageable.TakeDamage(damageable.PlayerDamage);
+
+            stateMachine.ChangeState(BossStoneGolemStateMachine.State.Hurt);
+        }
+    }
 }

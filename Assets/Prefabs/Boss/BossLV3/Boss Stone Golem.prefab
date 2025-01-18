@@ -387,9 +387,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
-  armAttackDamage: 100
-  zipAttackDamage: 100
-  laserAttackDamage: 100
   flySpeed: 0.2
   idleTime: 3
   restTime: 7
@@ -402,7 +399,7 @@ MonoBehaviour:
   projectileInitialDelay: 0
   maxProjectileCount: 5
   zipIndicator: {fileID: 4778649698233526442}
-  zipShootSpeed: 60
+  zipShootSpeed: 45
   zipShootCooldown: 5
   maxZipShootCount: 1
   laserPrefab: {fileID: 7850615434824812502}
@@ -536,6 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fc9b8bd4f3e8e41a91746333df2de9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerDamage: 30
 --- !u!1 &6774494547084522849
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,9 +631,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1740828593
+  m_SortingLayer: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: -841880166, guid: 71d0bab6d4e2ba84a9e7d28308a29bd8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
