@@ -51,6 +51,24 @@ public class StatsManager : Singleton<StatsManager>
         }
     }
 
+    public int GetPlayerCurrentHealth()
+    {
+        return playerCurrentHealth;
+    }
+
+    public int GetPlayerMaxHealth()
+    {
+        return PlayerMaxHealth;
+    }
+
+    public int GetEnemyCurrentHealth()
+    {
+        return enemyCurrentHealth;
+    }
+
+    public int GetEnemyMaxHealth()
+    {
+        return EnemyMaxHealth;
     public void GameOver()
     {
         SceneManagers.Instance.LoadScene(5);
