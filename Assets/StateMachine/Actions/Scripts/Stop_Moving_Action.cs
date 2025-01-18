@@ -9,6 +9,7 @@ namespace StateMachine
         {
             Rigidbody2DComponent rbComponent = statesComponent.GetCachedComponent<Rigidbody2DComponent>();
             rbComponent.SetVelocity(0, rbComponent.GetVelocity().y);
+            AudioManager.Instance.StopMovementSound();
         }
     }
 }
