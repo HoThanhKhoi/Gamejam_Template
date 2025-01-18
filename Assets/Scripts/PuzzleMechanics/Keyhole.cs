@@ -1,22 +1,30 @@
 using UnityEngine;
+using Utils;
 
 public class Keyhole : MonoBehaviour
 {
-	public string keyColor; // Assign "Red", "Blue", etc. in Inspector
-	public GameObject[] colorObjects; // Assign blocks, flags, etc. of the same color
+    public string requiredKeyColor; // Assign "Red", "Blue", etc. in Inspector
 
-	public void Unlock()
-	{
-		// Destroy all objects of the same color
-		foreach (GameObject obj in colorObjects)
-		{
-			Destroy(obj);
-		}
+    public void Unlock()
+    {
+        // Damage the boss
+        GameObject.FindGameObjectWithTag("Boss")?.GetComponent<IDamageable>().TakeDamage(100);
 
-		// Damage the boss
-		//FindFirstObjectByType<Boss>().TakeDamage(1);
+        // Destroy the keyhole
+        gameObject.SetActive(false);
+    }
 
-		// Destroy the keyhole
-		Destroy(gameObject);
-	}
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            var keyCollector = collision.collider.GetComponent<IKeyCollector>();
+            Debug.Log(keyCollector == null);
+            if (keyCollector != null && keyCollector.HasKey(requiredKeyColor))
+            {
+                Unlock();
+                keyCollector.UseKey(requiredKeyColor);
+            }
+        }
+    }
 }
