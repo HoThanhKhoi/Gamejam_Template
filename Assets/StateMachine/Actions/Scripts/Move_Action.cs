@@ -3,7 +3,7 @@
 namespace StateMachine
 {
     [CreateAssetMenu(menuName = "Scriptable State Machine/Actions/Platformer_Move_Horizontal", fileName = "Platformer_Move_Horizontal")]
-    public class Platformer_Move_Horizontal : ScriptableAction
+    public class Move_Action : ScriptableAction
     {
         private IMoveable moveable;
         private IHorizontalFacing horizontalFacing;
