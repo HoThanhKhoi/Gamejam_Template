@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class PlayerTopDownAimAndShoot : MonoBehaviour
+public class PlayerAimAndShoot : MonoBehaviour
 {
-    [SerializeField] private string poolName = "Projectile";
+    [SerializeField] private string poolName;
     [SerializeField] private Transform firePoint ;
     [SerializeField] private float shootCooldown = 0.5f;
     private Camera mainCamera;
