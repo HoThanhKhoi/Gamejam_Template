@@ -2,5 +2,6 @@ using UnityEngine;
 
 public interface IMoveable
 {
-   public void Move();
+    public bool IsMoving { get; set; }
+    public void Move();
 }
