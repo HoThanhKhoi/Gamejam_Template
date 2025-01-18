@@ -19,6 +19,7 @@ public class ObjectPoolingManager : Singleton<ObjectPoolingManager>
     private void Awake()
     {
         SetUpAllPool();
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void SetUpAllPool()
