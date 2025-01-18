@@ -8,7 +8,7 @@ namespace StateMachine
     {
         public override bool Verify(StateComponent statesComponent)
         {
-            return statesComponent.GetCachedComponent<PlayerController>().InputReader.IsMoving;
+            return statesComponent.GetCachedComponent<InputReaderComponent>().InputReader.IsMoving;
         }
     }
 }

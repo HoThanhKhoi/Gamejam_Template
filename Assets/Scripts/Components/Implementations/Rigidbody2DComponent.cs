@@ -3,20 +3,20 @@ using Utils;
 
 public class Rigidbody2DComponent : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    public Rigidbody2D Rb;
 
     private void Awake()
     {
-        rb = ComponentCache.GetComponent<Rigidbody2D>(gameObject);
+        Rb = ComponentCache.GetComponent<Rigidbody2D>(gameObject);
     }
 
-    private Vector2 GetVelocity()
+    public Vector2 GetVelocity()
     {
-        return rb.linearVelocity;
+        return Rb.linearVelocity;
     }
 
-    private void SetVelocity(float x, float y)
+    public void SetVelocity(float x, float y)
     {
-        rb.linearVelocity = new Vector2(x, y);
+        Rb.linearVelocity = new Vector2(x, y);
     }
 }

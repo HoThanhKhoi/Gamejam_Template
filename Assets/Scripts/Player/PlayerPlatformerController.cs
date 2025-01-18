@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerPlatformerController : MonoBehaviour
 {
     [field: SerializeField] public InputReader InputReader { get; private set; }
 
-    public bool IsPlatformer = true;
+    //public bool IsPlatformer = true;
     public IMoveable MoveComponent { get; set; }
     public IFacing FacingComponent { get; set; }
     public ICheckGrounded CheckGroundedComponent { get; set; }
@@ -12,14 +12,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        if(IsPlatformer)
-        {
-            InitiatePlatformer();
-        }
-        else
-        {
-            InitiateTopdown();
-        }
+        InitiatePlatformer();
     }
 
     private void InitiatePlatformer()
@@ -30,14 +23,14 @@ public class PlayerController : MonoBehaviour
         JumpComponent = GetComponent<IJumpable>();
     }
 
-    private void InitiateTopdown()
-    {
-        MoveComponent = GetComponent<TopDownMoveComponent>();
-        FacingComponent = GetComponent<MouseFacingComponent>();
-        if (FacingComponent == null)
-        {
-            Debug.LogError("MouseFacingComponent not found on the GameObject.");
-        }
-    }
+    //private void InitiateTopdown()
+    //{
+    //    MoveComponent = GetComponent<TopDownMoveComponent>();
+    //    FacingComponent = GetComponent<MouseFacingComponent>();
+    //    if (FacingComponent == null)
+    //    {
+    //        Debug.LogError("MouseFacingComponent not found on the GameObject.");
+    //    }
+    //}
 
 }

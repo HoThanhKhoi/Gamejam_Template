@@ -31,8 +31,6 @@ public class MouseFacingComponent : MonoBehaviour, IFacing
         // Convert the screen position to world space
         Vector2 mouseWorldPosition = mainCamera.ScreenToWorldPoint(mouseScreenPosition);
 
-        Debug.Log($"Mouse World Position: {mouseWorldPosition} | Object Position: {transform.position}");
-
         // Calculate the relative position (mouse x - object x)
         float relativePosition = mouseWorldPosition.x - transform.position.x;
 

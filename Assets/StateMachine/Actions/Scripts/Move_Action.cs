@@ -7,10 +7,8 @@ namespace StateMachine
     {
         public override void Act(StateComponent statesComponent)
         {
-            PlayerController playerController = statesComponent.GetCachedComponent<PlayerController>();
-            
-            playerController.MoveComponent.Move();
-            playerController.FacingComponent.HandleFacing();
+            statesComponent.GetCachedInterface<IMoveable>().Move();
+            statesComponent.GetCachedInterface<IFacing>().HandleFacing();
         }
     }
 }

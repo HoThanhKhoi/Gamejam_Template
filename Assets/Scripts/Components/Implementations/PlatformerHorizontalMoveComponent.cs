@@ -6,20 +6,19 @@ public class PlatformerHorizontalMoveComponent : MonoBehaviour, IMoveable
     [SerializeField] private float moveSpeed = 5f;
     private IFacing facingComponent;
     private Rigidbody2DComponent rigidbody2DComponent;
-    private Rigidbody2D rb;
-    private PlayerController playerController;
+    private PlayerPlatformerController playerController;
 
     private void Start()
     {
-        rb = ComponentCache.GetComponent<Rigidbody2D>(gameObject);
-        playerController = ComponentCache.GetComponent<PlayerController>(gameObject);
+        playerController = ComponentCache.GetComponent<PlayerPlatformerController>(gameObject);
         facingComponent = ComponentCache.GetInterface<IFacing>(gameObject);
+        rigidbody2DComponent = ComponentCache.GetComponent<Rigidbody2DComponent>(gameObject);
     }
 
     public void Move()
     {
         Vector2 moveDirection = playerController.InputReader.MoveDirection;
-        SetVelocity(moveDirection.x * moveSpeed, rb.linearVelocity.y);
+        rigidbody2DComponent.SetVelocity(moveDirection.x * moveSpeed, rigidbody2DComponent.GetVelocity().y);
         facingComponent.SetFacingValue(moveDirection.x);
     }
 }

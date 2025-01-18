@@ -7,7 +7,8 @@ namespace StateMachine
     {
         public override bool Verify(StateComponent statesComponent)
         {
-            return statesComponent.GetCachedComponent<PlayerController>().JumpComponent.Is;
+            //return statesComponent.GetCachedComponent<PlayerPlatformerController>().JumpComponent;
+            return false;
         }
     }
 }
