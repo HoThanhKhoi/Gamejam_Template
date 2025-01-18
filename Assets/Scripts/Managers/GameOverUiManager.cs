@@ -3,9 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class GameOverUiManager : MonoBehaviour
 {
-	[SerializeField] private int FirstLevelScene = 2;
-	[SerializeField] private int LastLevelScene = 4;
-
 	public void BackToMainMenu()
 	{
 		SceneManager.LoadScene("MainMenu");
@@ -14,8 +11,6 @@ public class GameOverUiManager : MonoBehaviour
 	// Restarts the current game scene
 	public void RestartGame()
 	{
-		int nextScene = Random.Range(FirstLevelScene, LastLevelScene + 1);
-
-		SceneManager.LoadScene(nextScene);
+		SceneManager.LoadScene(1);
 	}
 }
