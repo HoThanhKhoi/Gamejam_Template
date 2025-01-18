@@ -8,8 +8,7 @@ namespace StateMachine
     {
         public override bool Verify(StateComponent statesComponent)
         {
-            return false;
-            //return statesComponent.GetCachedComponent<InputReaderComponent>().InputReader.IsMoving;
+            return statesComponent.GetCachedComponent<InputReaderComponent>().InputReader.IsPlatformerMoving;
         }
     }
 }

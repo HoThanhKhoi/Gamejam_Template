@@ -9,6 +9,7 @@ public class RaycastGroundCheck2DComponent : MonoBehaviour, ICheckGrounded
     {
         // Perform a raycast downward to check for ground
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, groundLayer);
+        
         return hit.collider != null;
     }
 

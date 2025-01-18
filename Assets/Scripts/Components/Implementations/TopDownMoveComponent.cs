@@ -7,6 +7,8 @@ public class TopDownMoveComponent : MonoBehaviour, IMoveable
     private IFacing facingComponent;
     private Rigidbody2D rb;
 
+    public bool IsMoving { get; set; }
+
     private void Start()
     {
         rb = ComponentCache.GetComponent<Rigidbody2D>(gameObject);
@@ -16,7 +18,7 @@ public class TopDownMoveComponent : MonoBehaviour, IMoveable
     public void Move()
     {
         Vector2 moveDirection = ComponentCache.GetComponent<InputReaderComponent>(gameObject).InputReader.MoveDirection;
-        
+        IsMoving = moveDirection != Vector2.zero;
         facingComponent.SetFacingValue(moveDirection.x);
 
         SetVelocity(moveDirection.x, moveDirection.y);

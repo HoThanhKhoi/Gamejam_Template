@@ -7,7 +7,9 @@ namespace StateMachine
     {
         public override bool Verify(StateComponent statesComponent)
         {
-            return statesComponent.GetCachedComponent<PlayerPlatformerController>().InputReader.IsJumping;
+            bool isGrounded = statesComponent.GetCachedInterface<ICheckGrounded>().IsGrounded();
+            bool isInputJumping = statesComponent.GetCachedComponent<InputReaderComponent>().InputReader.IsJumping;
+            return isGrounded && isInputJumping;
         }
     }
 }

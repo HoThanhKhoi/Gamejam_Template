@@ -7,8 +7,7 @@ namespace StateMachine
     {
         public override bool Verify(StateComponent statesComponent)
         {
-            //return statesComponent.GetCachedComponent<PlayerPlatformerController>().JumpComponent;
-            return false;
+            return statesComponent.GetCachedComponent<Rigidbody2DComponent>().GetVelocity().y < 0;
         }
     }
 }
