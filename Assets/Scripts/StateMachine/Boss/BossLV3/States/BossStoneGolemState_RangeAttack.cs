@@ -37,6 +37,7 @@ public class BossStoneGolemState_RangeAttack : State<BossStoneGolem, BossStoneGo
     {
         base.AnimationTrigger(index);
 
+        owner.Rb.bodyType = RigidbodyType2D.Dynamic;
         owner.SpawnArmProjectile();
     }
 }

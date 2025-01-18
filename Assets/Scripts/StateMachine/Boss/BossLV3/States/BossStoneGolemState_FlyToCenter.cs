@@ -11,7 +11,6 @@ public class BossStoneGolemState_FlyToCenter : State<BossStoneGolem, BossStoneGo
     {
         base.Enter();
 
-        owner.Rb.bodyType = RigidbodyType2D.Kinematic;
         MoveToCenter();
     }
 
@@ -21,7 +20,7 @@ public class BossStoneGolemState_FlyToCenter : State<BossStoneGolem, BossStoneGo
 
         owner.FaceTo(owner.CenterTransform.position);
 
-        if(owner.GetDistanceToPosition(owner.CenterTransform.position) < 0.001f)
+        if(owner.GetDistanceToPosition(owner.CenterTransform.position) < 20f)
         {
             stateMachine.ChangeState(BossStoneGolemStateMachine.State.Idle);
         }
@@ -33,7 +32,6 @@ public class BossStoneGolemState_FlyToCenter : State<BossStoneGolem, BossStoneGo
         base.Exit();
 
         owner.Rb.linearVelocity = Vector2.zero;
-        owner.Rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
     private void MoveToCenter()

@@ -6,7 +6,7 @@ public class BossStoneGolem : BossStateOwner
 {
     [Header("Fly to destination")]
     [SerializeField] private float flySpeed;
-    [SerializeField] private Transform centerTransform;
+    private Transform centerTransform;
 
     public float FlySpeed { get { return flySpeed; } }
     public Transform CenterTransform { get { return centerTransform; } }
@@ -63,7 +63,6 @@ public class BossStoneGolem : BossStateOwner
     private int armProjectileCount = 0;
     private int zipShootCount = 0;
     private int laserCastCount = 0;
-
     protected override void Start()
     {
         base.Start();
@@ -73,6 +72,8 @@ public class BossStoneGolem : BossStateOwner
         laserBeam.SetActive(false);
 
         laserBeamSpriteRenderer = laserBeam.GetComponent<SpriteRenderer>();
+
+        centerTransform = player.transform;
     }
 
     public void SpawnArmProjectile()
