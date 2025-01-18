@@ -43,6 +43,8 @@ public class PlayerAimAndShoot : MonoBehaviour
             return;
         }
 
+        AudioManager.Instance.PlayShootSound();
+
         // Calculate the direction the gun is pointing
         Vector2 shootDirection = new Vector2(firePoint.right.x, firePoint.right.y).normalized;
 

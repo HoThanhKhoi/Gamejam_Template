@@ -9,6 +9,7 @@ namespace StateMachine
         {
             statesComponent.GetCachedInterface<IMoveable>().Move();
             statesComponent.GetCachedInterface<IFacing>().HandleFacing();
+            AudioManager.Instance.PlayMovementSound();
         }
     }
 }

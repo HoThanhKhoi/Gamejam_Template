@@ -8,6 +8,7 @@ namespace StateMachine
         public override bool Verify(StateComponent statesComponent)
         {
             return statesComponent.GetCachedComponent<InputReaderComponent>().InputReader.IsTopDownMoving;
+            AudioManager.Instance.PlayMovementSound();
         }
     }
 }
