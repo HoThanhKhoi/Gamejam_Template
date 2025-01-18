@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using UnityEngine;
 
-namespace GameJam.Modules.Core.Utilities
+namespace Utils
 {
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
