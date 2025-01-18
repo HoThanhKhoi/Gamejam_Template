@@ -133,15 +133,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1661492476073153446, guid: e48df3f8c44a1ff4695b519761a13622, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1661492476073153446, guid: e48df3f8c44a1ff4695b519761a13622, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1661492476073153446, guid: e48df3f8c44a1ff4695b519761a13622, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1661492476073153446, guid: e48df3f8c44a1ff4695b519761a13622, type: 3}
       propertyPath: m_LocalPosition.x
@@ -222,7 +222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 575128595066313048, guid: abf0c83c0edacd84f9408e6b789e0ed2, type: 3}
       propertyPath: minSpawnRadius
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 575128595066313048, guid: abf0c83c0edacd84f9408e6b789e0ed2, type: 3}
       propertyPath: numberOfBubbles

@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using Utils;
 
@@ -18,12 +19,13 @@ public class Keyhole : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            var keyCollector = collision.collider.GetComponent<IKeyCollector>();
-            Debug.Log(keyCollector == null);
-            if (keyCollector != null && keyCollector.HasKey(requiredKeyColor))
+            var keyList = FindObjectsByType<Key>(FindObjectsSortMode.None);
+            
+            var key = keyList.FirstOrDefault(n => n.keyColor == requiredKeyColor);
+            if (key != null)
             {
                 Unlock();
-                keyCollector.UseKey(requiredKeyColor);
+                key.UseKey();
             }
         }
     }

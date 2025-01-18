@@ -35,7 +35,7 @@ public class TouchBubbleChangeScene : MonoBehaviour
 		// Keep picking a random scene until it's not the current scene
 		do
 		{
-			nextScene = Random.Range(FirstLevelScene, LastLevelScene +2);
+			nextScene = Random.Range(FirstLevelScene, LastLevelScene + 2);
 		}
 		while (nextScene == currentSceneIndex);
 
