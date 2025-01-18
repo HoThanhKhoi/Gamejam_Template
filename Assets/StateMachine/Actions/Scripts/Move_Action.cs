@@ -6,11 +6,9 @@ namespace StateMachine
     public class Move_Action : ScriptableAction
     {
         private IMoveable moveable;
-        private IHorizontalFacing horizontalFacing;
+        private IFacing horizontalFacing;
         public override void Act(StateComponent statesComponent)
         {
-            Vector2 moveDirection = statesComponent.GetCachedComponent<PlayerController>().InputReader.MoveDirection;
-
             if(moveable == null)
             {
                 moveable = statesComponent.GetComponent<IMoveable>();
@@ -18,11 +16,11 @@ namespace StateMachine
             
             if(horizontalFacing == null)
             {
-                horizontalFacing = statesComponent.GetComponent<IHorizontalFacing>();
+                horizontalFacing = statesComponent.GetComponent<IFacing>();
             } 
             
-            moveable.Move(moveDirection);
-            horizontalFacing.FaceTo(-moveDirection.x);
+            moveable.Move();
+            horizontalFacing.HandleFacing();
         }
     }
 }
