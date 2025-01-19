@@ -14,6 +14,7 @@ public class BossStoneGolemState_Zip : State<BossStoneGolem, BossStoneGolemState
     public override void Enter()
     {
         base.Enter();
+        owner.Rb.bodyType = RigidbodyType2D.Dynamic;
         owner.ShowAttackIndicatorOnPlayer(true);
 
         stateTimer = owner.ZipShootCooldown - animationLength;
@@ -69,6 +70,7 @@ public class BossStoneGolemState_Zip : State<BossStoneGolem, BossStoneGolemState
 
         owner.StopMoving();
         owner.ShowAttackIndicatorOnPlayer(false);
+        owner.Rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
     public override void OnCollisionEnter2D(Collision2D other)

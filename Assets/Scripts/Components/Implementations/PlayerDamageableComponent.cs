@@ -12,7 +12,7 @@ public class PlayerDamageableComponent : MonoBehaviour, IDamageable
     private IEnumerator LaserDamageCO()
     {
         isLaserDamage = false;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         TakeDamage(EnemyLaserDamage);
     }
 
