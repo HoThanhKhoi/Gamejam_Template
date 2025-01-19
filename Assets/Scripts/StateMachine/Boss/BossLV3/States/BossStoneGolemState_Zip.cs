@@ -46,7 +46,7 @@ public class BossStoneGolemState_Zip : State<BossStoneGolem, BossStoneGolemState
             }
             else
             {
-                owner.SetActiveZipIndicator(true);
+                owner.SetActiveZipIndicator(false);
             }
         }
     }

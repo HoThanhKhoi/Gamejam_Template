@@ -19,6 +19,7 @@ public class StatsManager : Singleton<StatsManager>
 	private void OnEnable()
 	{
 		OnPlayerDead += GameOver;
+		OnEnemyDead += Win;
 	}
 
 	private void Start()
@@ -75,4 +76,9 @@ public class StatsManager : Singleton<StatsManager>
 	{
 		SceneManagers.Instance.LoadScene(5);
 	}
+
+	public void Win()
+	{
+		SceneManagers.Instance.LoadScene(6);
+	}	
 }
