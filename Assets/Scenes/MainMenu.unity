@@ -835,9 +835,41 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3591271937192743120, guid: 21e44196feb071744b9cd13394b731c5, type: 3}
+      propertyPath: poolList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3591271937192743120, guid: 21e44196feb071744b9cd13394b731c5, type: 3}
+      propertyPath: poolList.Array.data[1].name
+      value: DamageImpact
+      objectReference: {fileID: 0}
+    - target: {fileID: 3591271937192743120, guid: 21e44196feb071744b9cd13394b731c5, type: 3}
+      propertyPath: poolList.Array.data[3].name
+      value: NonDamageImpact
+      objectReference: {fileID: 0}
+    - target: {fileID: 3591271937192743120, guid: 21e44196feb071744b9cd13394b731c5, type: 3}
+      propertyPath: poolList.Array.data[3].size
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3591271937192743120, guid: 21e44196feb071744b9cd13394b731c5, type: 3}
+      propertyPath: poolList.Array.data[4].name
+      value: LaserImpact
+      objectReference: {fileID: 0}
+    - target: {fileID: 3591271937192743120, guid: 21e44196feb071744b9cd13394b731c5, type: 3}
+      propertyPath: poolList.Array.data[4].size
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3591271937192743120, guid: 21e44196feb071744b9cd13394b731c5, type: 3}
       propertyPath: deactivationScenes.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3591271937192743120, guid: 21e44196feb071744b9cd13394b731c5, type: 3}
+      propertyPath: poolList.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 5760102632597809165, guid: 16b27e8248a81de4ab27d8bede4bb2eb, type: 3}
+    - target: {fileID: 3591271937192743120, guid: 21e44196feb071744b9cd13394b731c5, type: 3}
+      propertyPath: poolList.Array.data[4].prefab
+      value: 
+      objectReference: {fileID: 5760102632597809165, guid: 8ff9a1df06620064ca027282f5da190d, type: 3}
     - target: {fileID: 4037040826345340728, guid: 21e44196feb071744b9cd13394b731c5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.6627995

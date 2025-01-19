@@ -27,7 +27,11 @@ public class BossStateOwner : StateOwner
 
 	[SerializeField] private LayerMask groundLayer;
 
-
+    protected override void Start()
+    {
+        base.Start();
+        Player = FindFirstObjectByType<PlayerController>().transform;
+    }
 
     public bool IsOnGround(Vector2 origin)
     {
@@ -55,6 +59,10 @@ public class BossStateOwner : StateOwner
         if (Player != null)
         {
             playerPosition = Player.transform.position;
+        }
+        else
+        {
+            Player = FindFirstObjectByType<PlayerController>().transform;
         }
 
         return playerPosition;

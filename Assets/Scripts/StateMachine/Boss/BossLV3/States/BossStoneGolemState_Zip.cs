@@ -14,10 +14,7 @@ public class BossStoneGolemState_Zip : State<BossStoneGolem, BossStoneGolemState
     public override void Enter()
     {
         base.Enter();
-        if(owner.Player.TryGetComponent<IShowHide>(out playerShowHideIndicatorComponent))
-        {
-            playerShowHideIndicatorComponent.Show();
-        }
+        owner.ShowAttackIndicatorOnPlayer(true);
 
         stateTimer = owner.ZipShootCooldown - animationLength;
         delay = 1f;
@@ -71,13 +68,16 @@ public class BossStoneGolemState_Zip : State<BossStoneGolem, BossStoneGolemState
         base.Exit();
 
         owner.StopMoving();
-        owner.Player.GetComponent<IShowHide>()?.Hide();
+        owner.ShowAttackIndicatorOnPlayer(false);
     }
 
     public override void OnCollisionEnter2D(Collision2D other)
     {
         base.OnCollisionEnter2D(other);
 
-        ObjectPoolingManager.Instance.SpawnFromPool("Laser Impact", other.contacts[0].point, Quaternion.identity);
+        if(!other.collider.CompareTag("PlayerAttack"))
+        {
+            ObjectPoolingManager.Instance.SpawnFromPool("DamageImpact", other.contacts[0].point, Quaternion.identity);
+        }
     }
 }

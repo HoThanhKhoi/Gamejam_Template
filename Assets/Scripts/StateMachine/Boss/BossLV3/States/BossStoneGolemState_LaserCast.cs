@@ -15,7 +15,7 @@ public class BossStoneGolemState_LaserCast : State<BossStoneGolem, BossStoneGole
         stateTimer = animationLength * 20;
 
         owner.CastLaser();
-        owner.Player.GetComponent<IShowHide>()?.Show();
+        owner.ShowAttackIndicatorOnPlayer(true);
     }
 
     public override void Update()
