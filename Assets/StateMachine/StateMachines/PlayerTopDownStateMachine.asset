@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718ecb92f024ea14e8d2f2450ca5def2, type: 3}
   m_Name: PlayerTopDownStateMachine
   m_EditorClassIdentifier: 
-  _initialState: {fileID: 11400000, guid: 8a572ab69e1197f4a892407e7e6f5a99, type: 2}
+  _initialState: {fileID: 11400000, guid: 765a6c89331c1054080e8e1d5bdbe93e, type: 2}
   _emptyState: {fileID: 11400000, guid: 20352fc7a011e8748b8ba85265763ede, type: 2}
   _transitions:
-  - originState: {fileID: 11400000, guid: 8a572ab69e1197f4a892407e7e6f5a99, type: 2}
+  - originState: {fileID: 11400000, guid: 765a6c89331c1054080e8e1d5bdbe93e, type: 2}
     condition: {fileID: 11400000, guid: d8dfbef70433b4f4f99af0c473ef6d8e, type: 2}
     trueState: {fileID: 11400000, guid: 919d49f4824fd2847bd2f1a8f7b86b38, type: 2}
     falseState: {fileID: 11400000, guid: 20352fc7a011e8748b8ba85265763ede, type: 2}
   - originState: {fileID: 11400000, guid: 919d49f4824fd2847bd2f1a8f7b86b38, type: 2}
     condition: {fileID: 11400000, guid: d8dfbef70433b4f4f99af0c473ef6d8e, type: 2}
     trueState: {fileID: 11400000, guid: 20352fc7a011e8748b8ba85265763ede, type: 2}
-    falseState: {fileID: 11400000, guid: 8a572ab69e1197f4a892407e7e6f5a99, type: 2}
+    falseState: {fileID: 11400000, guid: 765a6c89331c1054080e8e1d5bdbe93e, type: 2}

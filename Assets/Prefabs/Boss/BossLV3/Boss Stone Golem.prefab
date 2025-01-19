@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 0
-  player: {fileID: 0}
+  Player: {fileID: 0}
   rb: {fileID: 4012123233408706025}
   detectionRadius: 5
   detectionDistance: 20
@@ -399,7 +399,7 @@ MonoBehaviour:
   projectileInitialDelay: 0
   maxProjectileCount: 5
   zipIndicator: {fileID: 4778649698233526442}
-  zipShootSpeed: 45
+  zipShootSpeed: 30
   zipShootCooldown: 5
   maxZipShootCount: 1
   laserPrefab: {fileID: 7850615434824812502}
@@ -409,10 +409,10 @@ MonoBehaviour:
   laserImpact: {fileID: 5760102632597809165, guid: d497e62fc84c9db4684013e26ee18257, type: 3}
   laserCollisionLayer:
     serializedVersion: 2
-    m_Bits: 631
+    m_Bits: 639
   laserImpactLayer:
     serializedVersion: 2
-    m_Bits: 631
+    m_Bits: 639
   maxLazerCastCount: 1
   maxLazerLength: 50000
   laserShootTime: 3

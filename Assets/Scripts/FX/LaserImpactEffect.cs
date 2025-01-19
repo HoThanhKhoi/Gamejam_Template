@@ -11,7 +11,7 @@ public class LaserImpactEffect : MonoBehaviour
 
     private void OnEnable()
     {
-        StartCoroutine(UnActiveAfter(0.375f));
+        StartCoroutine(UnActiveAfter(0.2f));
     }
 
     private IEnumerator UnActiveAfter(float time)
