@@ -160,7 +160,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -950116949
+  m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 80990532, guid: 15c851a59daed434eb4435dfbd6c7b9e, type: 3}
@@ -413,9 +413,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 631
   maxLazerCastCount: 1
-  maxLazerLength: 50000
+  maxLazerLength: 1000
   laserShootTime: 3
   laserRotationSpeed: 1
+  laserBeamSpriteRenderer: {fileID: 7059613173415641048}
 --- !u!114 &2309013408810368742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,7 +686,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1050203493602066947}
@@ -753,7 +754,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -950116949
+  m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 30
   m_Sprite: {fileID: -1671279332, guid: 15c851a59daed434eb4435dfbd6c7b9e, type: 3}
@@ -761,7 +762,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 28.25, y: 5.5}
+  m_Size: {x: 1, y: 5.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

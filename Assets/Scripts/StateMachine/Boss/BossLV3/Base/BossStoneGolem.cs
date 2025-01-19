@@ -56,7 +56,7 @@ public class BossStoneGolem : BossStateOwner
 
     public float LaserShootTime { get { return laserShootTime; } }
 
-    private SpriteRenderer laserBeamSpriteRenderer;
+    [SerializeField] private SpriteRenderer laserBeamSpriteRenderer;
     private Vector2 currentHitPoint;
 
     private int armProjectileCount = 0;
@@ -69,8 +69,6 @@ public class BossStoneGolem : BossStateOwner
 
         laserOrigin.SetActive(false);
         laserBeam.SetActive(false);
-
-        laserBeamSpriteRenderer = laserBeam.GetComponent<SpriteRenderer>();
 
         centerTransform = Player.transform;
     }
@@ -203,7 +201,8 @@ public class BossStoneGolem : BossStateOwner
 
     private void ChangeLaserSize(float size)
     {
-        laserBeamSpriteRenderer.size = new Vector2(size, laserBeamSpriteRenderer.size.y);
+        laserBeam.transform.localScale = new Vector2(size, laserBeam.transform.localScale.y);
+        //laserBeamSpriteRenderer.size = new Vector2(size, laserBeamSpriteRenderer.size.y);
     }
 
     public void ResetAttackCount()
