@@ -73,9 +73,9 @@ public class BossStoneGolem : BossStateOwner
 
         laserBeamSpriteRenderer = laserBeam.GetComponent<SpriteRenderer>();
 
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        Player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        centerTransform = player.transform;
+        centerTransform = Player.transform;
     }
 
     public void SpawnArmProjectile()
@@ -84,7 +84,7 @@ public class BossStoneGolem : BossStateOwner
         GameObject armProjectile = ObjectPoolingManager.Instance.SpawnFromPool("Stone Golem Arm", armProjectileSpawnPoint.position, Quaternion.identity);
 
         GolemArmProjectile projectile = armProjectile.GetComponent<GolemArmProjectile>();
-        projectile.SetUp(player, armProjectileSpeed, armProjectileRotateSpeed, (Vector2)transform.right, isFLipped, projectileInitialDelay);
+        projectile.SetUp(Player, armProjectileSpeed, armProjectileRotateSpeed, (Vector2)transform.right, isFLipped, projectileInitialDelay);
 
         armProjectileCount++;
     }
@@ -111,7 +111,7 @@ public class BossStoneGolem : BossStateOwner
                 zipIndicator.gameObject.SetActive(true);
 
                 zipIndicator.SetPosition(0, transform.position);
-                zipIndicator.SetPosition(1, player.transform.position);
+                zipIndicator.SetPosition(1, Player.transform.position);
             }
         }
 

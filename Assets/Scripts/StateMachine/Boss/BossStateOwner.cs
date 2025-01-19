@@ -9,7 +9,7 @@ using static UnityEngine.UI.Image;
 public class BossStateOwner : StateOwner
 {
     [Header("Preference")]
-    [SerializeField] protected Transform player;
+    [SerializeField] public Transform Player;
     [SerializeField] protected Rigidbody2D rb;
 
     public Rigidbody2D Rb { get { return rb; } }
@@ -52,9 +52,9 @@ public class BossStateOwner : StateOwner
     {
         Vector2 playerPosition = Vector2.zero;
 
-        if (player != null)
+        if (Player != null)
         {
-            playerPosition = player.transform.position;
+            playerPosition = Player.transform.position;
         }
 
         return playerPosition;

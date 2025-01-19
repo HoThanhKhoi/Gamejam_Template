@@ -12,6 +12,7 @@ public class BossStoneGolemState_RangeAttack : State<BossStoneGolem, BossStoneGo
         base.Enter();
 
         stateTimer = owner.ProjectileCooldown - animationLength;
+        owner.Player.GetComponent<IShowHide>()?.Show();
     }
 
     public override void Update()
@@ -39,5 +40,12 @@ public class BossStoneGolemState_RangeAttack : State<BossStoneGolem, BossStoneGo
 
         owner.Rb.bodyType = RigidbodyType2D.Dynamic;
         owner.SpawnArmProjectile();
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+
+        owner.Player.GetComponent<IShowHide>()?.Hide();
     }
 }

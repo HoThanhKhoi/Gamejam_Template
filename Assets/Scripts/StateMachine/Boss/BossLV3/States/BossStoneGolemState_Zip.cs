@@ -5,6 +5,8 @@ public class BossStoneGolemState_Zip : State<BossStoneGolem, BossStoneGolemState
 {
     float velocityScale;
     float delay;
+
+    private IShowHide playerShowHideIndicatorComponent;
     public BossStoneGolemState_Zip(BossStoneGolem owner, StateMachine<BossStoneGolem, BossStoneGolemStateMachine.State> stateMachine, Animator anim) : base(owner, stateMachine, anim)
     {
     }
@@ -12,6 +14,10 @@ public class BossStoneGolemState_Zip : State<BossStoneGolem, BossStoneGolemState
     public override void Enter()
     {
         base.Enter();
+        if(owner.Player.TryGetComponent<IShowHide>(out playerShowHideIndicatorComponent))
+        {
+            playerShowHideIndicatorComponent.Show();
+        }
 
         stateTimer = owner.ZipShootCooldown - animationLength;
         delay = 1f;
@@ -65,6 +71,7 @@ public class BossStoneGolemState_Zip : State<BossStoneGolem, BossStoneGolemState
         base.Exit();
 
         owner.StopMoving();
+        owner.Player.GetComponent<IShowHide>()?.Hide();
     }
 
     public override void OnCollisionEnter2D(Collision2D other)

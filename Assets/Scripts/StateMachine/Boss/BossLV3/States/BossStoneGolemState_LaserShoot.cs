@@ -36,4 +36,10 @@ public class BossStoneGolemState_LaserShoot : State<BossStoneGolem, BossStoneGol
             }
         }
     }
+
+    public override void Exit()
+    {
+        base.Exit();
+        owner.Player.GetComponent<IShowHide>()?.Hide();
+    }
 }
