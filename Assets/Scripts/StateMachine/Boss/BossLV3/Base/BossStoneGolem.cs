@@ -20,7 +20,7 @@ public class BossStoneGolem : BossStateOwner
     [SerializeField] private float restFallSpeed;
 
     public float RestTime { get { return restTime; } }
-    public float RestFallSpeed { get {return restFallSpeed; } }
+    public float RestFallSpeed { get { return restFallSpeed; } }
 
     [Header("Projectile")]
     [SerializeField] private GameObject armProjectilePrefab;
@@ -45,7 +45,6 @@ public class BossStoneGolem : BossStateOwner
     [SerializeField] private GameObject laserOrigin;
     [SerializeField] private GameObject laserBeam;
     [SerializeField] private GameObject laserParent;
-    [SerializeField] private GameObject laserImpact;
     [SerializeField] private LayerMask laserCollisionLayer;
     [SerializeField] private LayerMask laserImpactLayer;
 
@@ -57,7 +56,7 @@ public class BossStoneGolem : BossStateOwner
 
     public float LaserShootTime { get { return laserShootTime; } }
 
-    private SpriteRenderer laserBeamSpriteRenderer;
+    [SerializeField] private SpriteRenderer laserBeamSpriteRenderer;
     private Vector2 currentHitPoint;
 
     private int armProjectileCount = 0;
@@ -70,10 +69,6 @@ public class BossStoneGolem : BossStateOwner
 
         laserOrigin.SetActive(false);
         laserBeam.SetActive(false);
-
-        laserBeamSpriteRenderer = laserBeam.GetComponent<SpriteRenderer>();
-
-        Player = GameObject.FindGameObjectWithTag("Player").transform;
 
         centerTransform = Player.transform;
     }
@@ -100,6 +95,25 @@ public class BossStoneGolem : BossStateOwner
         zipShootCount++;
 
         rb.AddForce(GetDirectionToPlayer(transform.position) * (zipShootSpeed * Rb.mass), ForceMode2D.Impulse);
+    }
+
+    public void ShowAttackIndicatorOnPlayer(bool show)
+    {
+        if (Player == null)
+        {
+            Player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+
+        if (show)
+        {
+            Player.GetComponent<IShowHide>()?.Show();
+        }
+        else
+        {
+            Player.GetComponent<IShowHide>()?.Hide();
+        }
+
+
     }
 
     public void SetActiveZipIndicator(bool active)
@@ -176,7 +190,7 @@ public class BossStoneGolem : BossStateOwner
 
             if (!impactHit.collider.CompareTag("FX"))
             {
-                GameObject impactInstacne = ObjectPoolingManager.Instance.SpawnFromPool("Laser Impact", hit.point, Quaternion.identity);
+                GameObject impactInstacne = ObjectPoolingManager.Instance.SpawnFromPool("LaserImpact", hit.point, Quaternion.identity);
             }
 
             laserLength = Vector2.Distance(laserOrigin.transform.position, hit.point);
@@ -187,7 +201,8 @@ public class BossStoneGolem : BossStateOwner
 
     private void ChangeLaserSize(float size)
     {
-        laserBeamSpriteRenderer.size = new Vector2(size, laserBeamSpriteRenderer.size.y);
+        laserBeam.transform.localScale = new Vector2(size, laserBeam.transform.localScale.y);
+        //laserBeamSpriteRenderer.size = new Vector2(size, laserBeamSpriteRenderer.size.y);
     }
 
     public void ResetAttackCount()

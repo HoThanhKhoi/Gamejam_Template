@@ -14,12 +14,11 @@ public class PlayerDamageableComponent : MonoBehaviour, IDamageable
         isLaserDamage = false;
         yield return new WaitForSeconds(0.1f);
         TakeDamage(EnemyLaserDamage);
-        isLaserDamage = true;
     }
 
     private void Update()
     {
-        if(isLaserDamage)
+        if (isLaserDamage)
         {
             StartCoroutine(LaserDamageCO());
         }
@@ -32,7 +31,7 @@ public class PlayerDamageableComponent : MonoBehaviour, IDamageable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.CompareTag("Boss"))
+        if (collision.collider.CompareTag("Boss"))
         {
             TakeDamage(EnemyDamage);
         }
@@ -43,6 +42,11 @@ public class PlayerDamageableComponent : MonoBehaviour, IDamageable
         if (collision.CompareTag("EnemyAttack"))
         {
             TakeDamage(EnemyProjectileDamage);
+        }
+
+        if (collision.CompareTag("LaserImpact"))
+        {
+            isLaserDamage = true;
         }
     }
 }

@@ -32,7 +32,7 @@ public class GolemArmProjectile : MonoBehaviour
         speed -= Time.deltaTime * 5;
         delayTimer -= Time.deltaTime;
 
-        if (speed <= 10f)
+        if (speed <= 5f)
         {
             ObjectPoolingManager.Instance.SpawnFromPool("Laser Impact", transform.position, Quaternion.identity);
             gameObject.SetActive(false);
@@ -49,7 +49,7 @@ public class GolemArmProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        ObjectPoolingManager.Instance.SpawnFromPool("Laser Impact", transform.position, Quaternion.identity);
+        ObjectPoolingManager.Instance.SpawnFromPool("DamageImpact", transform.position, Quaternion.identity);
         gameObject.SetActive(false);
     }
 

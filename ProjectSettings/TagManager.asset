@@ -13,6 +13,7 @@ TagManager:
   - SlowZone
   - Grass
   - PlayerAttack
+  - LaserImpact
   layers:
   - Default
   - TransparentFX

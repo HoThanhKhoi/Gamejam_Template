@@ -51,6 +51,11 @@ public class BubbleProjectile : MonoBehaviour
         // Handle collision logic (e.g., deal damage, pop the bubble, etc.)
         Debug.Log($"Bubble hit {collision.gameObject.name}");
         gameObject.SetActive(false); // Return to the object pool
+
+        if (collision.gameObject.tag == "Boss")
+        {
+            ObjectPoolingManager.Instance.SpawnFromPool("NonDamageImpact", transform.position, Quaternion.identity);
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -58,5 +63,10 @@ public class BubbleProjectile : MonoBehaviour
         // Handle collision logic (e.g., deal damage, pop the bubble, etc.)
         Debug.Log($"Bubble hit {collision.gameObject.name}");
         gameObject.SetActive(false); // Return to the object pool
+
+        if(collision.gameObject.tag == "Boss")
+        {
+            ObjectPoolingManager.Instance.SpawnFromPool("NonDamageImpact", transform.position, Quaternion.identity);
+        }
     }
 }
