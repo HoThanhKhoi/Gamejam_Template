@@ -10,5 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 574d64fa5e7f2d649b6cb43b222525ab, type: 3}
-  m_Name: Stop_Moving_Action
+  m_Name: Topdown_Stop_Moving_Action
   m_EditorClassIdentifier: 
+  gameType: Topdown

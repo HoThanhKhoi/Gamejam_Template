@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7585904491993955267}
   - component: {fileID: 8963395535156748051}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 3403704737113432509}
   - component: {fileID: 5602735194244185375}
   - component: {fileID: 8416044983134473842}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RedKey
   m_TagString: Untagged
   m_Icon: {fileID: 0}

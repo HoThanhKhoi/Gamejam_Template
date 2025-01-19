@@ -471,6 +471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyDamage: 30
   EnemyProjectileDamage: 10
+  EnemyLaserDamage: 1
 --- !u!114 &-3759700520397147066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,7 +488,7 @@ MonoBehaviour:
   circleCastDistance: 1
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 65
 --- !u!114 &3165096777336211314
 MonoBehaviour:
   m_ObjectHideFlags: 0
