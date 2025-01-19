@@ -13,6 +13,11 @@ public class EnemyHealthBarUpdate : MonoBehaviour
         int maxHealth = StatsManager.Instance.GetEnemyMaxHealth();
         UpdateHealthBar(currentHealth, maxHealth);
     }
+
+    private void OnDisable()
+    {
+        StatsManager.Instance.OnEnemyHealthChanged -= UpdateHealthBar;
+    }
     public void UpdateHealthBar(int health, int maxHealth)
     {
         healthBar.fillAmount = (float)health / (float)maxHealth;

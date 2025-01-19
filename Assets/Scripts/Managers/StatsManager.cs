@@ -74,11 +74,21 @@ public class StatsManager : Singleton<StatsManager>
 
 	public void GameOver()
 	{
+		ResetStats();
 		SceneManagers.Instance.LoadScene(5);
 	}
 
 	public void Win()
 	{
+		ResetStats();
 		SceneManagers.Instance.LoadScene(6);
 	}	
+
+	private void ResetStats()
+	{
+        enemyCurrentHealth = EnemyMaxHealth;
+        playerCurrentHealth = PlayerMaxHealth;
+		OnEnemyHealthChanged?.Invoke(enemyCurrentHealth, EnemyMaxHealth);
+        OnPlayerHealthChanged?.Invoke(playerCurrentHealth, PlayerMaxHealth);
+	}
 }
